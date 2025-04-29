@@ -1,6 +1,6 @@
 /*!
 =========================================================
-* TechGuy Landing page
+* DataGuy Landing page
 =========================================================
 
 * Copyright: 2019 DevCRUD (https://devcrud.com)
