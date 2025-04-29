@@ -155,7 +155,7 @@ function initMap() {
 // Page Title Starts
 (function loadPageTitle() {
   console.log("loadPageTitle");
-  let pageTitle = "Tech Guy";
+  let pageTitle = "Data Guy";
   document.title = pageTitle;
   console.log("pageTitle " + pageTitle);
 })();
