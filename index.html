@@ -22,27 +22,80 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <header class="header">
-      <div class="container">
-        <ul class="social-icons pt-3">
-          <li class="social-item">
-            <a
-              class="social-link text-light"
-              href="https://www.linkedin.com/in/femithetechguy/"
-              target="_blank"
-              ><i class="ti-linkedin" aria-hidden="true"></i
-            ></a>
-          </li>
-        </ul>
-        <div class="header-content">
-          <h4 class="header-subtitle">Hello, I am</h4>
-          <h1 class="header-title">Data Guy</h1>
-          <h6 class="header-mono">Data Analyst | DataQuery Developer</h6>
-          <!-- <button class="btn btn-primary btn-rounded" onclick="printFile('assets/docs/resume.pdf')"><i class="ti-printer pr-2"></i>Print Resume</button> -->
-          <!-- <button class="btn btn-primary btn-rounded" onclick="printPage()"><i class="ti-printer pr-2"></i>Print Resume</button> -->
+    <!-- Carousel Banner Start -->
+    <div
+      id="dataCarousel"
+      class="carousel slide"
+      data-ride="carousel"
+      style="background: linear-gradient(45deg, #fff 0%, #f0f0f0 70%, #bdbdbd 100%);"
+    >
+      <ol class="carousel-indicators">
+        <li data-target="#dataCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#dataCarousel" data-slide-to="1"></li>
+        <li data-target="#dataCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="min-height: 220px;">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            style="height: 40vw; min-height: 200px; max-height: 400px;"
+          >
+            <div class="carousel-caption position-static text-dark">
+              <h4 class="header-subtitle">Hello, I am</h4>
+              <h1 class="header-title">Data Guy</h1>
+              <h6 class="header-mono">Power Bi Developer</h6>
+              <p>Unlocking insights from raw data to drive business growth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="min-height: 220px;">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            style="height: 40vw; min-height: 200px; max-height: 400px;"
+          >
+            <div class="carousel-caption position-static text-dark">
+              <h4 class="header-subtitle">Visualizing Data</h4>
+              <h1 class="header-title">Transforming Numbers</h1>
+              <h6 class="header-mono">Interactive Dashboards & Reports</h6>
+              <p>Making complex data easy to understand and actionable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="min-height: 220px;">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            style="height: 40vw; min-height: 200px; max-height: 400px;"
+          >
+            <div class="carousel-caption position-static text-dark">
+              <h4 class="header-subtitle">Business Intelligence</h4>
+              <h1 class="header-title">Empowering Decisions</h1>
+              <h6 class="header-mono">BI Tools & Solutions</h6>
+              <p>Delivering strategic value through data-driven insights.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+      <a
+        class="carousel-control-prev"
+        href="#dataCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#dataCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Carousel Banner End -->
+
     <nav
       class="navbar sticky-top navbar-expand-lg navbar-light bg-white"
       data-spy="affix"
@@ -76,7 +129,7 @@
             </li>
           </ul>
           <ul class="navbar-nav brand">
-            <img src="assets/imgs/femi_avatar.jpg" alt="" class="brand-img" />
+            <img src="assets/imgs/data_avatar.jpg" alt="" class="brand-img" />
             <li class="brand-txt">
               <h5 class="brand-title">Data Guy</h5>
               <div class="brand-subtitle">
@@ -95,23 +148,15 @@
     <div class="container-fluid">
       <div id="about" class="row about-section">
         <div class="col-lg-4 about-card">
-          <h3 class="font-weight-light">Who am I ?</h3>
+          <h3 class="font-weight-light">Who am I?</h3>
           <span class="line mb-5"></span>
-          <h5 class="mb-3">A Data Analyst / DataQuery Developer</h5>
+          <h5 class="mb-3">Seasoned Power BI Developer</h5>
           <p class="mt-20">
-            As a skilled Web Developer and Software Engineer, I specialize in
-            creating dynamic, user-friendly websites and custom software
-            solutions. With a deep understanding of various programming
-            languages and frameworks, I deliver high-quality, scalable
-            applications tailored to meet client needs.
+            I turn raw data into actionable insights that drive business growth. With years of hands-on experience in Power BI, I design interactive dashboards and compelling reports that empower organizations to make data-driven decisions with confidence.
           </p>
           <p class="mt-20">
-            I am passionate about solving complex problems and providing
-            intuitive, efficient designs. Whether it's front-end or back-end
-            development, I focus on ensuring seamless performance and user
-            experience. Let's collaborate to bring your ideas to life!
+            My expertise spans data modeling, DAX, Power Query, and seamless integration with diverse data sources. I thrive on solving complex business challenges, optimizing analytics workflows, and delivering solutions that exceed expectations. Ready to elevate your business intelligence? Let’s connect!
           </p>
-          <!-- <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button> -->
         </div>
         <div class="col-lg-4 about-card">
           <h3 class="font-weight-light">Personal Info</h3>
@@ -146,39 +191,48 @@
           <span class="line mb-5"></span>
           <div class="row">
             <div class="col-1 text-danger pt-1">
-              <i class="ti-desktop icon-lg"></i>
+              <i class="ti-bar-chart icon-lg"></i>
             </div>
             <div class="col-10 ml-auto mr-3">
-              <h6>Web Development</h6>
+              <h6>Power BI Development</h6>
               <p class="subtitle">
-                Writing clean, maintainable code, understanding design patterns,
-                and following best practices in software development..
+                Building interactive dashboards and reports, advanced DAX calculations, Power Query transformations, and custom visualizations to deliver actionable insights.
               </p>
               <hr />
             </div>
           </div>
           <div class="row">
             <div class="col-1 text-danger pt-1">
-              <i class="ti-thought icon-lg"></i>
+              <i class="ti-pie-chart icon-lg"></i>
             </div>
             <div class="col-10 ml-auto mr-3">
-              <h6>Problem-Solving</h6>
+              <h6>Data Modeling & Analysis</h6>
               <p class="subtitle">
-                Analysis and idenitifying root-casues of complex issues, and
-                proferring efficient, scalable solutions using technology..
+                Designing robust data models, integrating multiple data sources, performing data cleansing, and uncovering trends to support business decisions.
               </p>
               <hr />
             </div>
           </div>
           <div class="row">
             <div class="col-1 text-danger pt-1">
-              <i class="ti-settings icon-lg"></i>
+              <i class="ti-light-bulb icon-lg"></i>
             </div>
             <div class="col-10 ml-auto mr-3">
-              <h6>System Design & Architecture</h6>
+              <h6>Business Intelligence Solutions</h6>
               <p class="subtitle">
-                Designing scalable, high-performant systems across databases,
-                cloud computing, microservices, and architectural patterns..
+                Translating business requirements into BI solutions, automating reporting processes, and enabling self-service analytics for stakeholders.
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1 text-danger pt-1">
+              <i class="ti-server icon-lg"></i>
+            </div>
+            <div class="col-10 ml-auto mr-3">
+              <h6>Data Integration</h6>
+              <p class="subtitle">
+                Connecting and blending data from SQL databases, Excel, cloud platforms, and APIs to create unified analytics environments.
               </p>
               <hr />
             </div>
@@ -202,7 +256,7 @@
               </div>
               <div class="card-body pb-2">
                 <h6>
-                  Java&comma; Velocity&comma; FreeMarker&comma; JavaScript
+                  Java, Velocity, FreeMarker, JavaScript
                 </h6>
               </div>
             </div>
@@ -216,7 +270,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Jenkins&comma; Nexus&comma; PROTEC&comma; Bamboo</h6>
+                <h6>Jenkins, Nexus, PROTEC, Bamboo</h6>
               </div>
             </div>
           </div>
@@ -229,7 +283,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>JUnit&comma; Serenity-BDD&comma; JestJs</h6>
+                <h6>JUnit, Serenity-BDD, JestJs</h6>
               </div>
             </div>
           </div>
@@ -242,7 +296,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Angular&comma; Spring Boot&comma; NodeJS</h6>
+                <h6>Angular, Spring Boot, NodeJS</h6>
               </div>
             </div>
           </div>
@@ -255,7 +309,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Kibana&comma; Grafana</h6>
+                <h6>Kibana, Grafana</h6>
               </div>
             </div>
           </div>
@@ -268,7 +322,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Git&comma; Github&comma; Bitbucket</h6>
+                <h6>Git, Github, Bitbucket</h6>
               </div>
             </div>
           </div>
@@ -281,7 +335,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Postman&comma; Swagger</h6>
+                <h6>Postman, Swagger</h6>
               </div>
             </div>
           </div>
@@ -294,7 +348,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>Scrum&comma; Salesforce&comma; JIRA</h6>
+                <h6>Scrum, Salesforce, JIRA</h6>
               </div>
             </div>
           </div>
@@ -307,7 +361,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>MondoDB&comma; MySQL&comma; SQLServer</h6>
+                <h6>MondoDB, MySQL, SQLServer</h6>
               </div>
             </div>
           </div>
@@ -320,7 +374,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>MVC&comma; Microservices&comma; REST</h6>
+                <h6>MVC, Microservices, REST</h6>
               </div>
             </div>
           </div>
@@ -333,7 +387,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>GCP&comma; Docker&comma; K8s&comma; RabbitMQ</h6>
+                <h6>GCP, Docker, K8s, RabbitMQ</h6>
               </div>
             </div>
           </div>
@@ -346,7 +400,7 @@
                 </div>
               </div>
               <div class="card-body pb-2">
-                <h6>OOP&comma; SOLID&comma; DRY&comma; KISS&comma;</h6>
+                <h6>OOP, SOLID, DRY, KISS</h6>
               </div>
             </div>
           </div>
@@ -357,65 +411,95 @@
     <div class="section contact" id="contact">
       <div id="map" class="map"></div>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="contact-form-card">
-              <h4 class="contact-title">Send a message</h4>
-              <form action="">
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    placeholder="Name *"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="email"
-                    placeholder="Email *"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" id=" placeholder=" Message *"
-                  rows="7" required></textarea>
-                </div>
-                <div class="form-group">
-                  <button
-                    type="submit"
-                    class="form-control btn btn-primary"
-                    onclick="sendMessage()"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="contact-info-card">
-              <h4 class="contact-title">Get in touch</h4>
-
-              <div class="row mb-2">
-                <div class="col-1 pt-1 mr-1">
-                  <i class="ti-envelope icon-md"></i>
-                </div>
-                <div class="col-10">
-                  <h6 class="d-inline">
-                    Email :<br />
-                    <span class="text-muted"></span
-                    ><a
-                      href="mailto:contact@fastdataqueries.com?subject=Ref>>FttgSite"
-                      >contact@fastdataqueries.com</a
-                    >
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="row">
+      <div class="col-lg-8">
+      <div class="contact-form-card">
+        <h4 class="contact-title">Professional & Consultation Inquiry</h4>
+        <form action="https://formspree.io/f/mnnvdjjk" method="POST">
+        <div class="form-group">
+        <input
+        class="form-control"
+        type="text"
+        name="name"
+        placeholder="Full Name *"
+        required
+        />
         </div>
+        <div class="form-group">
+        <input
+        class="form-control"
+        type="email"
+        name="email"
+        placeholder="Business Email *"
+        required
+        />
+        </div>
+        <div class="form-group">
+        <select class="form-control" name="inquiry_type" required>
+        <option value="" disabled selected>
+          Select Inquiry Type *
+        </option>
+        <option value="consultation">Consultation</option>
+        <option value="project">Project Collaboration</option>
+        <option value="training">Training/Workshop</option>
+        <option value="other">Other</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <textarea
+        class="form-control"
+        name="message"
+        placeholder="Describe your needs or questions *"
+        rows="7"
+        required
+        ></textarea>
+        </div>
+        <div class="form-group">
+        <button
+        type="submit"
+        class="form-control btn btn-primary"
+        >
+        Submit Inquiry
+        </button>
+        </div>
+        </form>
+      </div>
+      </div>
+      <div class="col-lg-4">
+      <div class="contact-info-card">
+        <h4 class="contact-title">Business Contact</h4>
+        <div class="row mb-2">
+        <div class="col-1 pt-1 mr-1">
+        <i class="ti-briefcase icon-md"></i>
+        </div>
+        <div class="col-10">
+        <h6 class="d-inline">
+        Email for Professional Inquiries:<br />
+        <a
+          href="mailto:contact@fastdataqueries.com?subject=Consultation%20or%20Professional%20Inquiry"
+          >contact@fastdataqueries.com</a
+        >
+        </h6>
+        </div>
+        </div>
+        <div class="row mb-2">
+        <div class="col-1 pt-1 mr-1">
+        <i class="ti-linkedin icon-md"></i>
+        </div>
+        <div class="col-10">
+        <h6 class="d-inline">
+        LinkedIn:<br />
+        <a
+          href="https://www.linkedin.com/in/femithetechguy/"
+          target="_blank"
+          >femithetechguy</a
+        >
+        </h6>
+        </div>
+        </div>
+      </div>
+      </div>
+      </div>
       </div>
     </div>
     <footer class="footer py-3">
@@ -433,20 +517,13 @@
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Isotope  -->
     <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
-
-    <!-- Google maps -->
     <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7-5_Ni5aGK1yDFfpN1ln44viGpKZ92Hs&loading=async&callback=initMap"
     ></script>
-    <!-- Fttg js script-->
     <script src="assets/js/fttg_script.js"></script>
   </body>
 </html>
