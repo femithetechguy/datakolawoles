@@ -19,6 +19,22 @@
     />
     <!-- Bootstrap + JohnDoe main styles -->
     <link rel="stylesheet" href="assets/css/fttg_style.css" />
+    <style>
+      /* Animation for skillset cards */
+      .card.skill-animate {
+        transition: transform 0.25s cubic-bezier(.4, 2, .6, 1),
+          box-shadow 0.25s;
+        cursor: pointer;
+      }
+      .card.skill-animate:hover,
+      .card.skill-animate:focus,
+      .card.skill-animate.active {
+        transform: translateY(-10px) scale(1.04) rotate(-1deg);
+        box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18),
+          0 1.5px 8px rgba(44, 62, 80, 0.1);
+        z-index: 2;
+      }
+    </style>
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -239,7 +255,7 @@
       <h3 class="font-weight-light"><span class="text-danger">Skillset</span></h3>
       <div class="row">
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Power BI Development</h4>
@@ -252,7 +268,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>DAX & Power Query</h4>
@@ -265,7 +281,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Data Modeling</h4>
@@ -278,7 +294,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Data Integration</h4>
@@ -291,7 +307,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Business Intelligence</h4>
@@ -304,7 +320,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Data Analysis</h4>
@@ -317,7 +333,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Automation & Refresh</h4>
@@ -330,7 +346,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Collaboration & Sharing</h4>
@@ -343,7 +359,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Presentation & Design</h4>
@@ -356,7 +372,7 @@
         </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card skill-animate">
           <div class="card-header">
           <div class="mt-2">
             <h4>Project Management</h4>
@@ -474,5 +490,13 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7-5_Ni5aGK1yDFfpN1ln44viGpKZ92Hs&loading=async&callback=initMap"
     ></script>
     <script src="assets/js/fttg_script.js"></script>
+    <script>
+      document.querySelectorAll('.card.skill-animate').forEach(function(card) {
+        card.addEventListener('click', function() {
+          card.classList.add('active');
+          setTimeout(() => card.classList.remove('active'), 400);
+        });
+      });
+    </script>
   </body>
 </html>
