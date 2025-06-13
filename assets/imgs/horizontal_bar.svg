@@ -1,0 +1,25 @@
+<svg width="600" height="480" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="260" fill="#fff"/>
+  <text x="20" y="30" font-size="18" font-family="sans-serif" fill="#222">Top 5 Claim Offices by Volume</text>
+  <!-- Axes -->
+  <line x1="120" y1="60" x2="120" y2="220" stroke="#bbb" stroke-width="2"/>
+  <line x1="120" y1="220" x2="370" y2="220" stroke="#bbb" stroke-width="2"/>
+  <!-- Bars -->
+  <rect x="120" y="70" width="200" height="24" fill="#f85c70"/>
+  <rect x="120" y="105" width="160" height="24" fill="#47d8e0"/>
+  <rect x="120" y="140" width="130" height="24" fill="#fad02c"/>
+  <rect x="120" y="175" width="90" height="24" fill="#a3c14a"/>
+  <rect x="120" y="210" width="60" height="24" fill="#a16ae8"/>
+  <!-- Labels -->
+  <text x="110" y="88" font-size="13" text-anchor="end" fill="#444">Office A</text>
+  <text x="110" y="123" font-size="13" text-anchor="end" fill="#444">Office B</text>
+  <text x="110" y="158" font-size="13" text-anchor="end" fill="#444">Office C</text>
+  <text x="110" y="193" font-size="13" text-anchor="end" fill="#444">Office D</text>
+  <text x="110" y="228" font-size="13" text-anchor="end" fill="#444">Office E</text>
+  <!-- Values -->
+  <text x="325" y="88" font-size="12" fill="#222">1.8M</text>
+  <text x="285" y="123" font-size="12" fill="#222">1.4M</text>
+  <text x="255" y="158" font-size="12" fill="#222">1.1M</text>
+  <text x="215" y="193" font-size="12" fill="#222">0.7M</text>
+  <text x="185" y="228" font-size="12" fill="#222">0.4M</text>
+</svg>

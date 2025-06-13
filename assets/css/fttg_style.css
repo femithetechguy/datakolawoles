@@ -6970,9 +6970,10 @@ a.close.disabled {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
+  filter: invert(1) grayscale(1) brightness(1.8);
+  width: 24px;
+  height: 24px;
   display: inline-block;
-  width: 20px;
-  height: 20px;
   background: no-repeat 50% / 100% 100%;
 }
 
