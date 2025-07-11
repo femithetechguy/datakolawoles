@@ -1,16 +1,4 @@
-/*!
-=========================================================
-* DataGuy Landing page
-=========================================================
 
-* Copyright: 2019 DevCRUD (https://fastdataqueries.com/)
-* Coded by www.fastdataqueries.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-// Smooth scroll for navbar links
 $(document).ready(function () {
   $(".navbar .nav-link").on("click", function (event) {
     if (this.hash !== "") {
@@ -121,7 +109,7 @@ function initMap() {
 
 // Set page title
 (function () {
-  document.title = "Data Guy";
+  document.title = "Adefemi Kolawole";
 })();
 
 // Set favicon
