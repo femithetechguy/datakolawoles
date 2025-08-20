@@ -1,0 +1,21 @@
+{
+  "copyright": "© 2025 Data.Kolawoles Analytics. All rights reserved.",
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/femithetechguy/",
+      "icon": "bi-linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/femithetechguy",
+      "icon": "bi-github"
+    }
+  ],
+  "quickLinks": [
+ 
+  ],
+  "contact": {
+    "email": "adefemi@kolawoles.com"
+  }
+}

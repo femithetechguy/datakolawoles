@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "Kolawoles.com",
+    "description": "Parent portfolio site for Kolawoles, allowing users to choose which aspect of my career to view.",
+    "font": {
+      "primary": "Source Sans Pro, Sans-serif"
+    },
+    "colors": {
+      "background": "#FFFFFF",
+      "accent": "#F85C70",
+      "text": "#212529",
+      "secondary": "#FDFDFE"
+    },
+    "sections": [
+      {
+        "title": "Data Analytics Portfolio",
+        "url": "https://data.kolawoles.com/",
+        "icon": "bi-bar-chart",
+        "description": "Data Analytics."
+      }
+    ],
+    "features": {
+      "modular": true,
+      "responsive": true,
+      "simple": true,
+      "precise": true
+    },
+    "icons": "Bootstrap Icons",
+    "styles": "Tailwind CSS",
+    "global": {
+      "style": "global.css",
+      "script": "global.js"
+    },
+    "tabs": [
+      {
+        "title": "Home",
+        "file": "json/home.json",
+        "style": "css/home.css",
+        "script": "js/home.js"
+      },
+      {
+        "title": "About",
+        "file": "json/about.json",
+        "style": "css/about.css",
+        "script": null
+      },
+      {
+        "title": "Expertise",
+        "file": "json/expertise.json",
+        "style": "css/expertise.css",
+        "script": "js/expertise.js"
+      },
+      {
+        "title": "Skillset",
+        "file": "json/skillset.json",
+        "style": "css/skillset.css",
+        "script": "js/skillset.js"
+      },
+      {
+        "title": "Showcase",
+        "file": "json/showcase.json",
+        "style": "css/showcase.css",
+        "script": "js/showcase.js"
+      },
+      {
+        "title": "Contact",
+        "file": "json/contact.json",
+        "style": "css/contact.css",
+        "script": "js/contact.js"
+      }
+    ]
+  }
+}

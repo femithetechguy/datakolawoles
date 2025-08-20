@@ -1,0 +1,30 @@
+[
+  {
+    "id": "expertise-data-visualization",
+    "title": "Data Visualization",
+    "description": "Building interactive dashboards and reports, advanced data visualizations, and custom charts to deliver actionable insights that drive business decisions.",
+    "category": "expertise",
+    "imageUrl": "assets/imgs/dashboard.svg"
+  },
+  {
+    "id": "expertise-data-modeling",
+    "title": "Data Modeling & Analysis",
+    "description": "Designing robust data models, integrating multiple data sources, performing data cleansing, and uncovering trends to support business decisions.",
+    "category": "expertise",
+    "imageUrl": "assets/imgs/barchart.svg"
+  },
+  {
+    "id": "expertise-bi-solutions",
+    "title": "Business Intelligence Solutions",
+    "description": "Translating business requirements into BI solutions, automating reporting processes, and enabling self-service analytics for stakeholders.",
+    "category": "expertise",
+    "imageUrl": "assets/imgs/linechart.svg"
+  },
+  {
+    "id": "expertise-data-integration",
+    "title": "Data Integration",
+    "description": "Connecting and blending data from SQL databases, Excel, cloud platforms, and APIs to create unified analytics environments.",
+    "category": "expertise",
+    "imageUrl": "assets/imgs/donutchart.svg"
+  }
+]

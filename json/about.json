@@ -1,0 +1,20 @@
+[
+  {
+    "id": "about-me-detailed",
+    "title": "Who I Am",
+    "description": "Seasoned Data Analytics Expert who turns raw data into actionable insights that drive business growth. With years of hands-on experience in data visualization and analytics, I design interactive dashboards and compelling reports that empower organizations to make data-driven decisions with confidence. My expertise spans data modeling, visualization techniques, and seamless integration with diverse data sources. I thrive on solving complex business challenges, optimizing analytics workflows, and delivering solutions that exceed expectations. Ready to elevate your business intelligence? Let's connect!",
+    "category": "about"
+  },
+  {
+    "id": "personal-info-email",
+    "title": "Personal Info (Email)",
+    "description": "adefemi@kolawoles.com",
+    "category": "about-contact"
+  },
+  {
+    "id": "vision-statement",
+    "title": "My Vision",
+    "description": "I believe that data is the foundation of informed decision-making in today's business environment. My goal is to help organizations unlock the full potential of their data assets through intuitive visualizations and insightful analysis that drive real business value.",
+    "category": "about"
+  }
+]

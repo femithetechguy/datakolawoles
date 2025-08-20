@@ -1,0 +1,26 @@
+[
+  {
+    "id": "contact-professional",
+    "title": "Professional Inquiries",
+    "description": "For consulting opportunities, project collaborations, or professional discussions, please use the contact form or email me directly.",
+    "category": "contact"
+  },
+  {
+    "id": "contact-email",
+    "title": "Email Address",
+    "description": "adefemi@kolawoles.com",
+    "category": "contact"
+  },
+  {
+    "id": "contact-availability",
+    "title": "Availability",
+    "description": "Currently available for consulting engagements, freelance projects, and speaking opportunities related to data analytics and business intelligence.",
+    "category": "contact"
+  },
+  {
+    "id": "contact-response",
+    "title": "Response Time",
+    "description": "I typically respond to all inquiries within 24-48 hours during business days.",
+    "category": "contact"
+  }
+]
