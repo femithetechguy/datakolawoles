@@ -1,4 +1,4 @@
-// Skillset section functionality for Kolawoles Data Analytics portfolio
+// Skillset section functionality for Data.Kolawoles Analytics portfolio
 
 // Create the skillset section HTML
 function createSkillsetSection(data) {

@@ -1,4 +1,4 @@
-// Contact section functionality for Kolawoles Data Analytics portfolio
+// Contact section functionality for Data.Kolawoles Analytics portfolio
 
 // Create the contact section HTML
 function createContactSection(data) {

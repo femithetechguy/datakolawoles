@@ -1,4 +1,4 @@
-// Home section functionality for Kolawoles Data Analytics portfolio
+// Home section functionality for Data.Kolawoles Analytics portfolio
 
 // Create the home section HTML
 function createHomeSection(data) {

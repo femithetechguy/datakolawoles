@@ -1,4 +1,4 @@
-// Footer functionality for Kolawoles Data Analytics portfolio
+// Footer functionality for Data.Kolawoles Analytics portfolio
 
 // Load footer content from footer.json
 function loadFooter() {
@@ -31,7 +31,7 @@ function loadFooter() {
     })
     .catch(error => {
       console.error('Error loading footer data:', error);
-      document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Kolawoles Data Analytics. All rights reserved.`;
+      document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Data.Kolawoles Analytics. All rights reserved.`;
     });
 }
 

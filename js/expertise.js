@@ -1,4 +1,4 @@
-// Expertise section functionality for Kolawoles Data Analytics portfolio
+// Expertise section functionality for Data.Kolawoles Analytics portfolio
 
 // Create the expertise section HTML
 function createExpertiseSection(data) {

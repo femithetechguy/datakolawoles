@@ -1,4 +1,4 @@
-// About section functionality for Kolawoles Data Analytics portfolio
+// About section functionality for Data.Kolawoles Analytics portfolio
 function createAboutSection(data) {
   let html = `
     <section class="about-section py-5">
@@ -18,20 +18,6 @@ function createAboutSection(data) {
   
   html += `
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="personal-info py-5 bg-light">
-      <div class="container">
-        <h3 class="mb-4">Personal Info</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <ul class="list-unstyled">
-              <li><strong>Email:</strong> <a href="mailto:adefemi@kolawoles.com">adefemi@kolawoles.com</a></li>
-              <li><strong>Website:</strong> <a href="https://www.kolawoles.com/">Adefemi Kolawole</a></li>
-            </ul>
           </div>
         </div>
       </div>

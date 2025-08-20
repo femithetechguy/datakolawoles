@@ -1,4 +1,4 @@
-// Common utility functions for Kolawoles Data Analytics portfolio
+// Common utility functions for Data.Kolawoles Analytics portfolio
 
 // Create a generic section based on data
 function createGenericSection(data) {

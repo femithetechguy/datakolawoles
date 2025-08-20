@@ -1,4 +1,4 @@
-// Showcase section functionality for Kolawoles Data Analytics portfolio
+// Showcase section functionality for Data.Kolawoles Analytics portfolio
 
 // Create the showcase section HTML
 function createShowcaseSection(data) {
