@@ -1,0 +1,91 @@
+[
+  {
+    "id": "skill-data-analytics",
+    "title": "Data Analytics",
+    "subtitle": "Advanced Analytics, Insights Generation, Data Storytelling",
+    "description": "Transforming raw data into actionable insights using statistical analysis, pattern recognition, and trend identification.",
+    "category": "skillset"
+  },
+  {
+    "id": "skill-data-visualization",
+    "title": "Data Visualization",
+    "subtitle": "Dashboards, Reports, Custom Visuals, Interactive Charts",
+    "description": "Creating compelling visual representations of data that communicate complex insights in an accessible and engaging way.",
+    "category": "skillset"
+  },
+  {
+    "id": "skill-data-modeling",
+    "title": "Data Modeling",
+    "subtitle": "Star/Snowflake Schema, Relationships, Normalization",
+    "description": "Designing robust data models that optimize performance, ensure data integrity, and facilitate efficient querying and analysis.",
+    "category": "skillset"
+  },
+  {
+    "id": "skill-bi-solutions",
+    "title": "Business Intelligence",
+    "subtitle": "KPIs, Metrics, Self-Service BI, Data Governance",
+    "description": "Developing comprehensive BI solutions that align with business goals and enable data-driven decision making across organizations.",
+    "category": "skillset"
+  },
+  {
+    "id": "skill-data-integration",
+    "title": "Data Integration",
+    "subtitle": "SQL, Excel, APIs, Cloud Data Sources",
+    "description": "Connecting and blending data from diverse sources to create unified analytics environments that provide a complete view of business operations.",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-dax-powerquery",
+    "title": "DAX & Power Query (Skillset)",
+    "description": "Advanced DAX, M Language, Data Transformation, Calculated Columns",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-data-modeling",
+    "title": "Data Modeling (Skillset)",
+    "description": "Star/Snowflake Schema, Relationships, Normalization, Data Flows",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-data-integration",
+    "title": "Data Integration (Skillset)",
+    "description": "SQL, Excel, APIs, Azure, SharePoint, Cloud Data Sources",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-business-intelligence",
+    "title": "Business Intelligence (Skillset)",
+    "description": "KPIs, Metrics, Data Storytelling, Self-Service BI, Data Governance",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-data-analysis",
+    "title": "Data Analysis (Skillset)",
+    "description": "Trend Analysis, Forecasting, Data Cleansing, Insights Generation",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-automation-refresh",
+    "title": "Automation & Refresh (Skillset)",
+    "description": "Scheduled Refresh, Dataflows, Power Automate Integration",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-collaboration-sharing",
+    "title": "Collaboration & Sharing (Skillset)",
+    "description": "Workspaces, App Publishing, Row-Level Security, Power BI Apps",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-presentation-design",
+    "title": "Presentation & Design (Skillset)",
+    "description": "Data Visualization Best Practices, UX/UI, Custom Themes",
+    "category": "skillset"
+  },
+  {
+    "id": "skillset-project-management",
+    "title": "Project Management (Skillset)",
+    "description": "Agile, Requirements Gathering, Stakeholder Communication",
+    "category": "skillset"
+  }
+]

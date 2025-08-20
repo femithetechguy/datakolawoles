@@ -1,0 +1,30 @@
+[
+  {
+    "id": "intro",
+    "title": "Adefemi Kolawole: Data Analytics Expert",
+    "description": "Unlocking insights from raw data to drive business growth through advanced analytics and compelling visualizations.",
+    "category": "home"
+  },
+  {
+    "id": "services-summary",
+    "title": "Services",
+    "description": "Providing end-to-end data analytics solutions including data visualization, business intelligence implementation, dashboard development, and custom reporting solutions.",
+    "category": "home",
+    "imageUrl": "assets/imgs/dashboard.svg"
+  },
+  {
+    "id": "expertise-summary",
+    "title": "My Expertise",
+    "description": "Specializing in transforming complex data into clear, actionable insights through strategic analytics and powerful visualization techniques.",
+    "category": "home",
+    "imageUrl": "assets/imgs/donutchart.svg"
+  },
+  {
+    "id": "featured-work",
+    "title": "Featured Projects",
+    "description": "Explore my portfolio of data analytics projects across various industries including finance, healthcare, retail, and manufacturing.",
+    "category": "home-portfolio",
+    "imageUrl": "assets/imgs/barchart.svg",
+    "link": "#showcase"
+  }
+]
