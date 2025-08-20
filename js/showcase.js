@@ -3,7 +3,7 @@
 // Create the showcase section HTML
 function createShowcaseSection(data) {
   let html = `
-    <section class="showcase-section py-5">
+    <section class="showcase-section py-3">
       <div class="container">
         <div class="showcase-gallery">
           <div class="row">
@@ -11,7 +11,7 @@ function createShowcaseSection(data) {
   
   data.forEach((project, index) => {
     html += `
-      <div class="col-md-6 col-lg-4 mb-4">
+      <div class="col-md-6 col-lg-4 mb-3">
         <div class="showcase-item animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card shadow h-100">
             <img src="${project.imageUrl || 'assets/imgs/dashboard.svg'}" class="card-img-top" alt="${project.title}">

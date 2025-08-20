@@ -3,7 +3,7 @@
 // Create the home section HTML
 function createHomeSection(data) {
   let html = `
-    <section class="home-section py-5">
+    <section class="home-section py-3">
       <div class="container">
         <div class="row">
   `;
@@ -11,7 +11,7 @@ function createHomeSection(data) {
   data.forEach((item, index) => {
     if (index === 0) {
       html += `
-        <div class="col-12 mb-5">
+        <div class="col-12 mb-3">
           <div class="welcome-banner animate-fade-in text-center py-4">
             <h2 class="mb-3">${item.title}</h2>
             <p class="lead">${item.description}</p>
@@ -20,7 +20,7 @@ function createHomeSection(data) {
       `;
     } else {
       html += `
-        <div class="col-md-6 col-lg-4 mb-4">
+        <div class="col-md-6 col-lg-4 mb-3">
           <div class="feature-card animate-fade-in" style="animation-delay: ${(index) * 100}ms;">
             <div class="card shadow h-100">
               ${item.imageUrl ? `
