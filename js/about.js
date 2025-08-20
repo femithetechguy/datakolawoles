@@ -5,7 +5,7 @@ function createAboutSection(data) {
   const ctaItem = data.find(item => item.category === 'about-cta');
   
   let html = `
-    <section class="about-section py-5">
+    <section class="about-section py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
@@ -32,7 +32,7 @@ function createAboutSection(data) {
   if (ctaItem) {
     html += `
     <!-- CTA Section -->
-    <section class="about-cta-section py-5">
+    <section class="about-cta-section py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">

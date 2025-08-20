@@ -3,7 +3,7 @@
 // Create the contact section HTML
 function createContactSection(data) {
   let html = `
-    <section class="contact-section py-5">
+    <section class="contact-section py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">

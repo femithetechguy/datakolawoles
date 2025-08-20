@@ -3,14 +3,14 @@
 // Create the expertise section HTML
 function createExpertiseSection(data) {
   let html = `
-    <section class="expertise-section py-5">
+    <section class="expertise-section py-3">
       <div class="container">
         <div class="row expertise-grid">
   `;
   
   data.forEach((item, index) => {
     html += `
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6 mb-3">
         <div class="expertise-card animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card-img-container">
             ${item.imageUrl ? `<img src="${item.imageUrl}" alt="${item.title}" class="img-fluid">` : ''}

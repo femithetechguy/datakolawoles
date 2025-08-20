@@ -3,7 +3,7 @@
 // Create a generic section based on data
 function createGenericSection(data) {
   let html = `
-    <section class="generic-section py-5">
+    <section class="generic-section py-3">
       <div class="container">
         <div class="row">
   `;
