@@ -558,3 +558,54 @@ footer {
     font-size: 1.8rem;
   }
 }
+
+/* Let's Connect Section Styles */
+.connect-banner {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  padding: 2.5rem;
+  color: white;
+  margin: 2rem 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.connect-banner:hover {
+  transform: translateY(-5px);
+}
+
+.connect-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.email-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  background-color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* About page specific styles for CTA */
+.about-cta-section .connect-banner {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  color: white;
+}
+
+.about-cta-section .connect-title {
+  color: white;
+}
