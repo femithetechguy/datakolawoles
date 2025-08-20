@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
                 <i class="bi bi-bar-chart-fill"></i>
-                <span>Kolawoles Analytics</span>
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="bi bi-list"></i>
@@ -44,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h6 class="job-title animate-fade-in">Power BI Developer</h6>
                 <p class="animate-fade-in">Unlocking insights from raw data to drive business growth.</p>
                 <div class="hero-buttons">
-                  <a href="#about" class="btn btn-primary">Learn More</a>
-                  <a href="#contact" class="btn btn-outline">Contact Me</a>
+                  <a href="javascript:void(0);" onclick="navigateToTab('About')" class="btn btn-primary">Learn More</a>
+                  <a href="javascript:void(0);" onclick="navigateToTab('Contact')" class="btn btn-outline">Contact Me</a>
                 </div>
               </div>
             </div>
@@ -258,4 +257,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // We no longer need loadScript as all scripts are included in index.html
+
+  // Make navigateToTab function available globally so it can be called from button clicks
+  window.navigateToTab = function(tabTitle) {
+    if (!window.appConfig) return; // Make sure config is loaded
+    
+    // Find the tab by title
+    const tab = window.appConfig.site.tabs.find(t => 
+      t.title.toLowerCase() === tabTitle.toLowerCase()
+    );
+    
+    if (!tab) return;
+    
+    // Find and click the corresponding nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.dataset.tabTitle === tab.title.toLowerCase()) {
+        link.click();
+      }
+    });
+  };
 });
