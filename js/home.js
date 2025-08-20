@@ -31,7 +31,7 @@ function createHomeSection(data) {
               <div class="card-body">
                 <h4>${item.title}</h4>
                 <p>${item.description}</p>
-                ${item.link ? `<a href="${item.link}" class="btn btn-primary">Learn More</a>` : ''}
+                ${item.link ? `<a href="javascript:void(0);" onclick="navigateToTab('Showcase')" class="btn btn-primary">Learn More</a>` : ''}
               </div>
             </div>
           </div>
