@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -119,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
       </footer>
+      <a href="#" class="floating-home-icon" title="Go to top of page" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="bottom:32px;">
+        <i class="bi bi-house-door-fill" style="font-size:2rem;"></i>
+      </a>
     `;
   }
 
