@@ -48,9 +48,6 @@ function createShowcaseSection(data) {
               <p class="card-text mb-2">${project.description}</p>
               <div class="d-flex flex-wrap gap-2">
                 ${project.link ? `<a href="${project.link}" class="btn btn-primary btn-sm">View Details</a>` : ''}
-                <button onclick="printProject('${project.title}')" class="btn btn-outline-secondary btn-sm">
-                  <i class="bi bi-printer"></i> Print
-                </button>
               </div>
             </div>
           </div>
@@ -69,59 +66,7 @@ function createShowcaseSection(data) {
   return html;
 }
 
-// Print project details
-function printProject(projectTitle) {
-  // Create a printable version of the project
-  const printContent = `
-    <html>
-      <head>
-        <title>Project: ${projectTitle}</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 20px; }
-          h1 { color: #F85C70; }
-          .project-details { margin-top: 20px; }
-        </style>
-      </head>
-      <body>
-        <h1>${projectTitle}</h1>
-        <div class="project-details">
-          <p>Project details for ${projectTitle}</p>
-          <p>Generated on ${new Date().toLocaleDateString()}</p>
-        </div>
-      </body>
-    </html>
-  `;
-  
-  const printWindow = window.open('', '_blank');
-  printWindow.document.open();
-  printWindow.document.write(printContent);
-  printWindow.document.close();
-  
-  setTimeout(() => {
-    printWindow.print();
-    printWindow.close();
-  }, 500);
-}
-
-// Print page
-function printPage() {
-  window.print();
-}
-
-// Print file (PDF, etc.)
-function printFile(fileUrl) {
-  const iframe = document.createElement("iframe");
-  iframe.style.position = "absolute";
-  iframe.style.top = "-10000px";
-  iframe.src = fileUrl;
-  document.body.appendChild(iframe);
-  iframe.onload = () => {
-    iframe.contentWindow.print();
-    document.body.removeChild(iframe);
-  };
-}
 
 // Make functions available globally
 window.createShowcaseSection = createShowcaseSection;
 window.getProjectIcon = getProjectIcon;
-window.printProject = printProject;
