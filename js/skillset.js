@@ -5,7 +5,7 @@ function createSkillsetSection(data) {
   let html = `
     <section class="skills-section py-3">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
   `;
   
   data.forEach((skill, index) => {

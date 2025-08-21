@@ -19,7 +19,7 @@ function createGenericSection(data) {
   let html = `
     <section class="generic-section py-3">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
   `;
   
   data.forEach((item, index) => {
@@ -31,7 +31,7 @@ function createGenericSection(data) {
           </div>
           <div class="card-body">
             <p>${item.description}</p>
-            <div class="text-center mt-3" id="common-image-${index}">
+            <div class="text-center mt-2 py-1" id="common-image-${index}">
               <i class="bi ${getCommonIcon(item.title)} text-primary" style="font-size: 3rem;"></i>
             </div>
             ${item.link ? `<a href="${item.link}" class="btn btn-primary mt-3">View Details</a>` : ''}

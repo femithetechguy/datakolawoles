@@ -32,7 +32,7 @@ function createShowcaseSection(data) {
     <section class="showcase-section py-3">
       <div class="container">
         <div class="showcase-gallery">
-          <div class="row">
+          <div class="row justify-content-center">
   `;
   
   data.forEach((project, index) => {
@@ -40,16 +40,18 @@ function createShowcaseSection(data) {
       <div class="col-md-6 col-lg-3 mb-2">
         <div class="showcase-item animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card shadow h-100">
-            <div class="card-img-top text-center py-3 bg-light" id="project-image-${index}">
-              <i class="bi ${getProjectIcon(project.title)} text-primary" style="font-size: 4rem;"></i>
+            <div class="card-img-top text-center px-3 py-2 bg-light" id="project-image-${index}">
+              <i class="bi ${getProjectIcon(project.title)} text-primary" style="font-size: 3.75rem;"></i>
             </div>
             <div class="card-body">
-              <h5 class="card-title">${project.title}</h5>
-              <p class="card-text">${project.description}</p>
-              ${project.link ? `<a href="${project.link}" class="btn btn-primary mt-2">View Details</a>` : ''}
-              <button onclick="printProject('${project.title}')" class="btn btn-outline-secondary mt-2 ms-2">
-                <i class="bi bi-printer"></i> Print
-              </button>
+              <h5 class="card-title mb-1">${project.title}</h5>
+              <p class="card-text mb-2">${project.description}</p>
+              <div class="d-flex flex-wrap gap-2">
+                ${project.link ? `<a href="${project.link}" class="btn btn-primary btn-sm">View Details</a>` : ''}
+                <button onclick="printProject('${project.title}')" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-printer"></i> Print
+                </button>
+              </div>
             </div>
           </div>
         </div>
