@@ -16,7 +16,7 @@
   --color-border: rgba(33, 37, 41, 0.15);
   
   /* Additional semantic variables */
-  --section-padding: 40px 0;
+  --section-padding: 25px 0;
   --heading-font-weight: 700;
   --text-muted: rgba(33, 37, 41, 0.7);
 }
@@ -164,7 +164,7 @@ header {
 
 /* Hero section */
 .hero-section {
-  padding: 3rem 0 2rem;
+  padding: 2rem 0 1.5rem;
   background-color: var(--color-background);
   position: relative;
   overflow: hidden;
@@ -226,14 +226,14 @@ header {
 
 /* Section styles */
 .section-title {
-  padding: 2rem 0 0.5rem;
+  padding: 1.5rem 0 0.5rem;
   text-align: center;
 }
 
 .section-heading {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--color-text);
   font-weight: 700;
 }
@@ -250,7 +250,7 @@ header {
 }
 
 .section-content {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Card styles */
@@ -266,7 +266,20 @@ header {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--color-shadow);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  border-left: 3px solid var(--color-accent);
+}
+
+/* Card alignment styles */
+.row.justify-content-center > [class^="col-"] {
+  display: flex;
+}
+
+/* Fix for showcase.js missing closing div */
+.card .d-flex.flex-wrap.gap-2 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
 }
 
 .card-header {
@@ -281,11 +294,11 @@ header {
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .card-img-top {
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -301,7 +314,8 @@ header {
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--color-shadow);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  border-left: 3px solid var(--color-accent);
 }
 
 .skill-title {
@@ -504,8 +518,25 @@ footer {
     margin-top: 1rem;
   }
   
+  /* Tablet card optimizations */
+  .card {
+    font-size: 0.9rem;
+  }
+  
+  h1, h2 {
+    margin-bottom: 0.75rem;
+  }
+  
+  h3, h4, h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-bottom: 0.75rem;
+  }
+  
   .hero-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
   }
   
   .hero-content h1 {
@@ -531,7 +562,7 @@ footer {
   }
   
   .section-title {
-    padding: 2rem 0 1rem;
+    padding: 1rem 0 0.5rem;
   }
 }
 
@@ -546,6 +577,52 @@ footer {
   
   .hero-buttons {
     flex-direction: column;
+  }
+  
+  /* Reduce card padding on mobile */
+  .card-body {
+    padding: 1rem;
+  }
+  
+  /* Make card images smaller on mobile */
+  .card-img-top {
+    height: 150px;
+  }
+  
+  /* Reduce padding on icon containers */
+  .card-img-top,
+  .card-img-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* Reduce margins and paddings globally on mobile */
+  .row > [class^="col-"] {
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Reduce padding on all sections */
+  section {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  
+  /* Make vertical spacing more compact */
+  .py-3, .pt-3, .pb-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  
+  /* Reduce paragraph margins */
+  p.lead {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  /* Adjust padding for section contents */
+  .section-content {
+    margin-bottom: 1rem;
+  }
     gap: 0.5rem;
   }
   
@@ -608,6 +685,30 @@ footer {
 
 .about-cta-section .connect-title {
   color: white;
+}
+
+/* Bootstrap icon styling for image fallbacks */
+.card-img-container .bi,
+.card-img-top .bi,
+.text-center .bi {
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-background-alt);
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+  font-size: 2.5rem !important;
+  width: 120px;
+  height: 120px;
+  line-height: 60px;
+  box-shadow: 0 5px 15px rgba(248, 92, 112, 0.1);
+}
+
+.card-img-container .bi:hover,
+.card-img-top .bi:hover,
+.text-center .bi:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(248, 92, 112, 0.2);
 }
 
 /* Global spacing reduction */

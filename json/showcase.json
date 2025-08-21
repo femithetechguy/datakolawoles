@@ -3,7 +3,7 @@
     "id": "project-sales-dashboard",
     "title": "Sales Performance Dashboard",
     "description": "Interactive sales analytics dashboard that provides real-time insights into revenue trends, product performance, and regional sales distribution.",
-    "imageUrl": "assets/imgs/dashboard.svg",
+    "iconClass": "bi-cash-coin",
     "link": "#project-details",
     "category": "showcase"
   },
@@ -11,7 +11,7 @@
     "id": "project-customer-analysis",
     "title": "Customer Segmentation Analysis",
     "description": "Advanced customer segmentation visualizations identifying key customer groups and their purchasing behaviors to drive targeted marketing campaigns.",
-    "imageUrl": "assets/imgs/piechart.svg",
+    "iconClass": "bi-people-fill",
     "link": "#project-details",
     "category": "showcase"
   },
@@ -19,7 +19,7 @@
     "id": "project-financial-reporting",
     "title": "Financial Performance Reports",
     "description": "Comprehensive financial reporting solution with automated KPI tracking, variance analysis, and executive-level dashboards for informed decision making.",
-    "imageUrl": "assets/imgs/linechart.svg",
+    "iconClass": "bi-currency-dollar",
     "link": "#project-details",
     "category": "showcase"
   },
@@ -27,7 +27,7 @@
     "id": "project-market-analysis",
     "title": "Market Trend Analysis",
     "description": "Market intelligence dashboard tracking industry trends, competitive positioning, and growth opportunities with predictive analytics capabilities.",
-    "imageUrl": "assets/imgs/barchart.svg",
+    "iconClass": "bi-graph-up-arrow",
     "link": "#project-details",
     "category": "showcase"
   },
@@ -35,7 +35,7 @@
     "id": "project-supply-chain",
     "title": "Supply Chain Optimization",
     "description": "End-to-end supply chain visibility solution with inventory optimization models, logistics performance tracking, and supplier analytics.",
-    "imageUrl": "assets/imgs/stacked_barchart.svg",
+    "iconClass": "bi-truck",
     "link": "#project-details",
     "category": "showcase"
   },
@@ -43,7 +43,7 @@
     "id": "project-hr-analytics",
     "title": "HR Analytics Platform",
     "description": "Workforce analytics solution providing insights into employee performance, retention risk factors, and talent acquisition effectiveness.",
-    "imageUrl": "assets/imgs/horizontal_bar.svg",
+    "iconClass": "bi-person-workspace",
     "link": "#project-details",
     "category": "showcase"
   }

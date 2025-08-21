@@ -1,19 +1,32 @@
-// Expertise section functionality for Data.Kolawoles Analytics portfolio
+// Expertise section functionality for Kolawoles Data Analytics portfolio
+
+// Helper function to determine appropriate icon for expertise areas
+function getExpertiseIcon(title) {
+  const titleLower = title.toLowerCase();
+  
+  if (titleLower.includes('visualization') || titleLower.includes('dashboard')) return 'bi-bar-chart-line-fill';
+  if (titleLower.includes('modeling') || titleLower.includes('analysis')) return 'bi-diagram-3-fill';
+  if (titleLower.includes('business') || titleLower.includes('intelligence')) return 'bi-lightbulb-fill';
+  if (titleLower.includes('integration')) return 'bi-intersect';
+  
+  // Default icon
+  return 'bi-graph-up';
+}
 
 // Create the expertise section HTML
 function createExpertiseSection(data) {
   let html = `
     <section class="expertise-section py-3">
       <div class="container">
-        <div class="row expertise-grid">
+        <div class="row expertise-grid justify-content-center">
   `;
   
   data.forEach((item, index) => {
     html += `
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 mb-2">
         <div class="expertise-card animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
-          <div class="card-img-container">
-            ${item.imageUrl ? `<img src="${item.imageUrl}" alt="${item.title}" class="img-fluid">` : ''}
+          <div class="card-img-container text-center px-3 py-2" id="expertise-image-${index}">
+            <i class="bi ${getExpertiseIcon(item.title)} text-primary" style="font-size: 3.5rem;"></i>
           </div>
           <div class="card-content">
             <h3>${item.title}</h3>
@@ -57,5 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Make the function available globally
+// Make functions available globally
 window.createExpertiseSection = createExpertiseSection;
+window.getExpertiseIcon = getExpertiseIcon;

@@ -5,12 +5,12 @@ function createSkillsetSection(data) {
   let html = `
     <section class="skills-section py-3">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
   `;
   
   data.forEach((skill, index) => {
     html += `
-      <div class="col-md-6 col-lg-4 mb-3">
+      <div class="col-md-6 col-lg-3 mb-2">
         <div class="skill-card animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <h4 class="skill-title">${skill.title}</h4>
           <h6 class="skill-subtitle">${skill.subtitle}</h6>

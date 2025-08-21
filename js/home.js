@@ -5,33 +5,31 @@ function createHomeSection(data) {
   let html = `
     <section class="home-section py-3">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
   `;
   
   data.forEach((item, index) => {
     if (index === 0) {
       html += `
-        <div class="col-12 mb-3">
-          <div class="welcome-banner animate-fade-in text-center py-4">
-            <h2 class="mb-3">${item.title}</h2>
+        <div class="col-12 mb-2">
+          <div class="welcome-banner animate-fade-in text-center py-2">
+            <h2 class="mb-2">${item.title}</h2>
             <p class="lead">${item.description}</p>
           </div>
         </div>
       `;
     } else {
       html += `
-        <div class="col-md-6 col-lg-4 mb-3">
+        <div class="col-md-6 col-lg-3 mb-2">
           <div class="feature-card animate-fade-in" style="animation-delay: ${(index) * 100}ms;">
             <div class="card shadow h-100">
-              ${item.imageUrl ? `
-                <div class="text-center p-4 bg-light">
-                  <img src="${item.imageUrl}" alt="${item.title}" class="img-fluid" style="height: 120px;">
-                </div>
-              ` : ''}
+              <div class="text-center px-3 py-2 bg-light" id="home-image-${index}">
+                <i class="bi ${getBootstrapIconForTitle(item.title)} text-primary" style="font-size: 3.5rem;"></i>
+              </div>
               <div class="card-body">
-                <h4>${item.title}</h4>
-                <p>${item.description}</p>
-                ${item.link ? `<a href="javascript:void(0);" onclick="navigateToTab('Showcase')" class="btn btn-primary">Learn More</a>` : ''}
+                <h4 class="mb-1">${item.title}</h4>
+                <p class="mb-2">${item.description}</p>
+                ${item.link ? `<a href="javascript:void(0);" onclick="navigateToTab('Showcase')" class="btn btn-primary btn-sm">Learn More</a>` : ''}
               </div>
             </div>
           </div>
@@ -81,5 +79,24 @@ document.addEventListener("DOMContentLoaded", function() {
   link.href = "assets/imgs/favicon.png";
 })();
 
-// Make the function available globally
+// Helper function to determine the appropriate Bootstrap icon based on title
+function getBootstrapIconForTitle(title) {
+  const titleLower = title.toLowerCase();
+  
+  // Map common data analytics terms to appropriate Bootstrap icons
+  if (titleLower.includes('data') || titleLower.includes('analytics')) return 'bi-bar-chart-fill';
+  if (titleLower.includes('visualization') || titleLower.includes('dashboard')) return 'bi-graph-up';
+  if (titleLower.includes('services')) return 'bi-gear-fill';
+  if (titleLower.includes('expertise')) return 'bi-stars';
+  if (titleLower.includes('project') || titleLower.includes('featured')) return 'bi-collection';
+  if (titleLower.includes('integration')) return 'bi-diagram-3';
+  if (titleLower.includes('model')) return 'bi-grid-3x3-gap';
+  if (titleLower.includes('business') || titleLower.includes('intelligence')) return 'bi-briefcase-fill';
+  
+  // Default icon if no match
+  return 'bi-bar-chart-line-fill';
+}
+
+// Make functions available globally
 window.createHomeSection = createHomeSection;
+window.getBootstrapIconForTitle = getBootstrapIconForTitle;
