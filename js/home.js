@@ -20,7 +20,7 @@ function createHomeSection(data) {
       `;
     } else {
       html += `
-        <div class="col-md-6 col-lg-4 mb-3">
+        <div class="col-md-6 col-lg-3 mb-3">
           <div class="feature-card animate-fade-in" style="animation-delay: ${(index) * 100}ms;">
             <div class="card shadow h-100">
               <div class="text-center p-4 bg-light" id="home-image-${index}">

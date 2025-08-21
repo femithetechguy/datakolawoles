@@ -10,7 +10,7 @@ function createSkillsetSection(data) {
   
   data.forEach((skill, index) => {
     html += `
-      <div class="col-md-6 col-lg-4 mb-3">
+      <div class="col-md-6 col-lg-3 mb-3">
         <div class="skill-card animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <h4 class="skill-title">${skill.title}</h4>
           <h6 class="skill-subtitle">${skill.subtitle}</h6>

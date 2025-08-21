@@ -24,7 +24,7 @@ function createGenericSection(data) {
   
   data.forEach((item, index) => {
     html += `
-      <div class="col-md-6 col-lg-4 mb-4">
+      <div class="col-md-6 col-lg-3 mb-4">
         <div class="card animate-fade-in shadow h-100" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card-header">
             <h4>${item.title}</h4>
