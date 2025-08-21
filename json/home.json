@@ -10,21 +10,21 @@
     "title": "Services",
     "description": "Providing end-to-end data analytics solutions including data visualization, business intelligence implementation, dashboard development, and custom reporting solutions.",
     "category": "home",
-    "imageUrl": "assets/imgs/dashboard.svg"
+    "iconClass": "bi-gear-fill"
   },
   {
     "id": "expertise-summary",
     "title": "My Expertise",
     "description": "Specializing in transforming complex data into clear, actionable insights through strategic analytics and powerful visualization techniques.",
     "category": "home",
-    "imageUrl": "assets/imgs/donutchart.svg"
+    "iconClass": "bi-stars"
   },
   {
     "id": "featured-work",
     "title": "Featured Projects",
     "description": "Explore my portfolio of data analytics projects across various industries including finance, healthcare, retail, and manufacturing.",
     "category": "home-portfolio",
-    "imageUrl": "assets/imgs/barchart.svg",
+    "iconClass": "bi-collection",
     "link": "#showcase"
   }
 ]

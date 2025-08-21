@@ -266,7 +266,8 @@ header {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--color-shadow);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  border-left: 3px solid var(--color-accent);
 }
 
 .card-header {
@@ -301,7 +302,8 @@ header {
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--color-shadow);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  border-left: 3px solid var(--color-accent);
 }
 
 .skill-title {
@@ -608,6 +610,30 @@ footer {
 
 .about-cta-section .connect-title {
   color: white;
+}
+
+/* Bootstrap icon styling for image fallbacks */
+.card-img-container .bi,
+.card-img-top .bi,
+.text-center .bi {
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-background-alt);
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+  font-size: 2.5rem !important;
+  width: 120px;
+  height: 120px;
+  line-height: 60px;
+  box-shadow: 0 5px 15px rgba(248, 92, 112, 0.1);
+}
+
+.card-img-container .bi:hover,
+.card-img-top .bi:hover,
+.text-center .bi:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(248, 92, 112, 0.2);
 }
 
 /* Global spacing reduction */

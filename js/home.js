@@ -23,11 +23,9 @@ function createHomeSection(data) {
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="feature-card animate-fade-in" style="animation-delay: ${(index) * 100}ms;">
             <div class="card shadow h-100">
-              ${item.imageUrl ? `
-                <div class="text-center p-4 bg-light">
-                  <img src="${item.imageUrl}" alt="${item.title}" class="img-fluid" style="height: 120px;">
-                </div>
-              ` : ''}
+              <div class="text-center p-4 bg-light" id="home-image-${index}">
+                <i class="bi ${getBootstrapIconForTitle(item.title)} text-primary" style="font-size: 4rem;"></i>
+              </div>
               <div class="card-body">
                 <h4>${item.title}</h4>
                 <p>${item.description}</p>
@@ -81,5 +79,24 @@ document.addEventListener("DOMContentLoaded", function() {
   link.href = "assets/imgs/favicon.png";
 })();
 
-// Make the function available globally
+// Helper function to determine the appropriate Bootstrap icon based on title
+function getBootstrapIconForTitle(title) {
+  const titleLower = title.toLowerCase();
+  
+  // Map common data analytics terms to appropriate Bootstrap icons
+  if (titleLower.includes('data') || titleLower.includes('analytics')) return 'bi-bar-chart-fill';
+  if (titleLower.includes('visualization') || titleLower.includes('dashboard')) return 'bi-graph-up';
+  if (titleLower.includes('services')) return 'bi-gear-fill';
+  if (titleLower.includes('expertise')) return 'bi-stars';
+  if (titleLower.includes('project') || titleLower.includes('featured')) return 'bi-collection';
+  if (titleLower.includes('integration')) return 'bi-diagram-3';
+  if (titleLower.includes('model')) return 'bi-grid-3x3-gap';
+  if (titleLower.includes('business') || titleLower.includes('intelligence')) return 'bi-briefcase-fill';
+  
+  // Default icon if no match
+  return 'bi-bar-chart-line-fill';
+}
+
+// Make functions available globally
 window.createHomeSection = createHomeSection;
+window.getBootstrapIconForTitle = getBootstrapIconForTitle;

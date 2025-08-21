@@ -1,5 +1,19 @@
 // Common utility functions for Data.Kolawoles Analytics portfolio
 
+// Helper function to get common icons
+function getCommonIcon(title) {
+  const titleLower = title.toLowerCase();
+  
+  if (titleLower.includes('data')) return 'bi-database';
+  if (titleLower.includes('analysis')) return 'bi-clipboard-data';
+  if (titleLower.includes('dashboard')) return 'bi-speedometer2';
+  if (titleLower.includes('report')) return 'bi-file-earmark-bar-graph';
+  if (titleLower.includes('chart')) return 'bi-pie-chart-fill';
+  
+  // Default
+  return 'bi-star-fill';
+}
+
 // Create a generic section based on data
 function createGenericSection(data) {
   let html = `
@@ -17,7 +31,9 @@ function createGenericSection(data) {
           </div>
           <div class="card-body">
             <p>${item.description}</p>
-            ${item.imageUrl ? `<img src="${item.imageUrl}" alt="${item.title}" class="img-fluid rounded mt-3">` : ''}
+            <div class="text-center mt-3" id="common-image-${index}">
+              <i class="bi ${getCommonIcon(item.title)} text-primary" style="font-size: 3rem;"></i>
+            </div>
             ${item.link ? `<a href="${item.link}" class="btn btn-primary mt-3">View Details</a>` : ''}
           </div>
         </div>
@@ -60,3 +76,4 @@ function formatDate(date) {
 window.createGenericSection = createGenericSection;
 window.animateElement = animateElement;
 window.formatDate = formatDate;
+window.getCommonIcon = getCommonIcon;

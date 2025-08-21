@@ -48,11 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="hero-image">
-                <img src="assets/imgs/data_avatar.jpg" alt="Adefemi Kolawole" class="img-fluid rounded-circle shadow">
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
