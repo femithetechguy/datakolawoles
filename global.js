@@ -83,11 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6">
-              <div class="hero-content">
+              <div class="hero-content" id="intro-content">
+                <!-- This content will be dynamically loaded from home.json -->
                 <span class="subtitle animate-fade-in">Hello, I am</span>
-                <h1 class="animate-fade-in">Adefemi Kolawole</h1>
-                <h6 class="job-title animate-fade-in">Power BI Developer</h6>
-                <p class="animate-fade-in">Unlocking insights from raw data to drive business growth.</p>
+                <h1 class="animate-fade-in">Loading...</h1>
+                <h6 class="job-title animate-fade-in">Data Professional</h6>
+                <p class="animate-fade-in">Loading profile information...</p>
                 <div class="hero-buttons">
                   <a href="javascript:void(0);" onclick="navigateToTab('About')" class="btn btn-primary">Learn More</a>
                   <a href="javascript:void(0);" onclick="navigateToTab('Contact')" class="btn btn-outline">Contact Me</a>
@@ -348,6 +349,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
   }
 
+  function loadIntroContent() {
+    debug('INTRO', 'Loading intro content from home.json');
+    
+    fetch('json/home.json')
+      .then(response => {
+        debug('INTRO', 'Home json response received', { status: response.status });
+        return response.json();
+      })
+      .then(data => {
+        debug('INTRO', 'Home json parsed successfully', data);
+        
+        // Find intro item
+        const introItem = data.find(item => item.id === 'intro');
+        if (introItem) {
+          debug('INTRO', 'Found intro data', introItem);
+          
+          const introContent = document.getElementById('intro-content');
+          if (introContent) {
+            // Parse the title to get the name and job title
+            const titleParts = introItem.title.split(':');
+            const name = titleParts[0].trim();
+            const jobTitle = titleParts.length > 1 ? titleParts[1].trim() : 'Data Analytics Expert';
+            
+            // Update the intro content
+            introContent.innerHTML = `
+              <span class="subtitle animate-fade-in">Hello, I am</span>
+              <h1 class="animate-fade-in">${name}</h1>
+              <h6 class="job-title animate-fade-in">${jobTitle}</h6>
+              <p class="animate-fade-in">${introItem.description}</p>
+              <div class="hero-buttons">
+                <a href="javascript:void(0);" onclick="navigateToTab('About')" class="btn btn-primary">Learn More</a>
+                <a href="javascript:void(0);" onclick="navigateToTab('Contact')" class="btn btn-outline">Contact Me</a>
+              </div>
+            `;
+            
+            debug('INTRO', 'Updated intro content');
+          } else {
+            debug('INTRO', 'ERROR: Intro content element not found');
+          }
+        } else {
+          debug('INTRO', 'ERROR: No intro item found in home.json');
+        }
+      })
+      .catch(error => {
+        debug('INTRO', 'ERROR loading intro content', error);
+        console.error('Error loading intro content:', error);
+      });
+  }
+
   function loadAppConfig() {
     debug('CONFIG', 'Loading app configuration from app.json');
     // Load app.json and initialize tabs
@@ -368,6 +418,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize tabs from app.json
         debug('CONFIG', 'Initializing tabs from config');
         initTabs(config.site.tabs);
+        
+        // Load intro content
+        debug('INTRO', 'Loading intro content');
+        loadIntroContent();
         
         // Load footer content
         debug('FOOTER', 'Loading footer content');
