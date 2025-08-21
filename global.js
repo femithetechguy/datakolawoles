@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Title section for each tab
           html += `
-            <section class="section-title py-5">
+            <section class="section-title py-3">
               <div class="container">
                 <h2 class="section-heading">${tab.title}</h2>
               </div>
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => {
         console.error('Error loading tab content:', error);
         document.getElementById('content-area').innerHTML = `
-          <section class="section-error py-5">
+          <section class="section-error py-3">
             <div class="container">
               <div class="card shadow">
                 <div class="card-body text-center">

@@ -11,16 +11,16 @@ function createHomeSection(data) {
   data.forEach((item, index) => {
     if (index === 0) {
       html += `
-        <div class="col-12 mb-3">
-          <div class="welcome-banner animate-fade-in text-center py-4">
-            <h2 class="mb-3">${item.title}</h2>
+        <div class="col-12 mb-2">
+          <div class="welcome-banner animate-fade-in text-center py-2">
+            <h2 class="mb-2">${item.title}</h2>
             <p class="lead">${item.description}</p>
           </div>
         </div>
       `;
     } else {
       html += `
-        <div class="col-md-6 col-lg-3 mb-3">
+        <div class="col-md-6 col-lg-3 mb-2">
           <div class="feature-card animate-fade-in" style="animation-delay: ${(index) * 100}ms;">
             <div class="card shadow h-100">
               <div class="text-center p-4 bg-light" id="home-image-${index}">

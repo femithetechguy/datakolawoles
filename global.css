@@ -16,7 +16,7 @@
   --color-border: rgba(33, 37, 41, 0.15);
   
   /* Additional semantic variables */
-  --section-padding: 40px 0;
+  --section-padding: 25px 0;
   --heading-font-weight: 700;
   --text-muted: rgba(33, 37, 41, 0.7);
 }
@@ -164,7 +164,7 @@ header {
 
 /* Hero section */
 .hero-section {
-  padding: 3rem 0 2rem;
+  padding: 2rem 0 1.5rem;
   background-color: var(--color-background);
   position: relative;
   overflow: hidden;
@@ -226,14 +226,14 @@ header {
 
 /* Section styles */
 .section-title {
-  padding: 2rem 0 0.5rem;
+  padding: 1.5rem 0 0.5rem;
   text-align: center;
 }
 
 .section-heading {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--color-text);
   font-weight: 700;
 }
@@ -250,7 +250,7 @@ header {
 }
 
 .section-content {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Card styles */
@@ -282,11 +282,11 @@ header {
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .card-img-top {
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 

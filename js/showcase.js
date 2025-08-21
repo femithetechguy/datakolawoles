@@ -37,11 +37,11 @@ function createShowcaseSection(data) {
   
   data.forEach((project, index) => {
     html += `
-      <div class="col-md-6 col-lg-3 mb-3">
+      <div class="col-md-6 col-lg-3 mb-2">
         <div class="showcase-item animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card shadow h-100">
-            <div class="card-img-top text-center py-4 bg-light" id="project-image-${index}">
-              <i class="bi ${getProjectIcon(project.title)} text-primary" style="font-size: 4.5rem;"></i>
+            <div class="card-img-top text-center py-3 bg-light" id="project-image-${index}">
+              <i class="bi ${getProjectIcon(project.title)} text-primary" style="font-size: 4rem;"></i>
             </div>
             <div class="card-body">
               <h5 class="card-title">${project.title}</h5>

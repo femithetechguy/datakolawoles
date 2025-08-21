@@ -23,7 +23,7 @@ function createExpertiseSection(data) {
   
   data.forEach((item, index) => {
     html += `
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 mb-2">
         <div class="expertise-card animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
           <div class="card-img-container text-center py-3" id="expertise-image-${index}">
             <i class="bi ${getExpertiseIcon(item.title)} text-primary" style="font-size: 3.5rem;"></i>
