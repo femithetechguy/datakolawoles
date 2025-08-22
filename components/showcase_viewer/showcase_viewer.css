@@ -102,20 +102,19 @@
 /* PowerBI Report Container */
 .report-container {
     width: 100%;
-    height: 600px;
     position: relative;
     background: var(--color-background);
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px var(--color-shadow);
-    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .powerbi-report-frame {
     width: 100%;
-    height: 600px;
+    height: 700px; /* Increased height to accommodate tabs */
     border: none;
     display: block;
-    margin-top: 1rem;
+    border-radius: 0.5rem;
 }
 
 #powerbi-container {
@@ -144,7 +143,7 @@
 
 .reports-wrapper {
     position: relative;
-    min-height: 600px;
+    min-height: 700px;
 }
 
 .report-nav {
