@@ -240,9 +240,22 @@ class ShowcaseViewer {
             
             // Update content after fade out
             setTimeout(() => {
+                // Process markdown
+                const processedContent = content
+                    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    .replace(/^- (.*$)/gm, '<li>$1</li>')
+                    .replace(/<\/li>\n<li>/g, '</li><li>')
+                    .replace(/^(?:<li>.*<\/li>\n?)+$/gm, '<ul>$&</ul>')
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/^(.+)$/gm, '<p>$1</p>');
+
                 this.contentArea.innerHTML = `
-                    <div class="content-area p-3">
-                        <pre class="content-text">${content}</pre>
+                    <div class="content-area">
+                        <div class="content-text">${processedContent}</div>
                     </div>
                 `;
                 // Fade in new content
