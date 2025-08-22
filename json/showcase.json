@@ -1,49 +1,49 @@
 [
   {
-    "id": "project-sales-dashboard",
-    "title": "Sales Performance Dashboard",
-    "description": "Interactive sales analytics dashboard that provides real-time insights into revenue trends, product performance, and regional sales distribution.",
-    "iconClass": "bi-cash-coin",
+    "id": "project-loan-disbursement",
+    "title": "Loan Disbursement Analysis",
+    "description": "Power BI dashboard tracking loan approval rates, disbursement timelines, and risk analysis for optimized lending operations.",
+    "iconClass": "bi-cash-stack",
     "link": "#project-details",
     "category": "showcase"
   },
   {
-    "id": "project-customer-analysis",
-    "title": "Customer Segmentation Analysis",
-    "description": "Advanced customer segmentation visualizations identifying key customer groups and their purchasing behaviors to drive targeted marketing campaigns.",
-    "iconClass": "bi-people-fill",
+    "id": "project-revenue-ageing",
+    "title": "Revenue and Customer Ageing Analysis",
+    "description": "Power BI solution analyzing revenue patterns and customer account aging to improve cash flow management and collection strategies.",
+    "iconClass": "bi-calendar-date",
     "link": "#project-details",
     "category": "showcase"
   },
   {
-    "id": "project-financial-reporting",
-    "title": "Financial Performance Reports",
-    "description": "Comprehensive financial reporting solution with automated KPI tracking, variance analysis, and executive-level dashboards for informed decision making.",
-    "iconClass": "bi-currency-dollar",
+    "id": "project-restaurant-analytics",
+    "title": "Restaurant Analytics Dashboard",
+    "description": "Comprehensive Power BI dashboard for restaurant performance tracking, including sales trends, menu item popularity, and operational efficiency metrics.",
+    "iconClass": "bi-shop",
     "link": "#project-details",
     "category": "showcase"
   },
   {
-    "id": "project-market-analysis",
-    "title": "Market Trend Analysis",
-    "description": "Market intelligence dashboard tracking industry trends, competitive positioning, and growth opportunities with predictive analytics capabilities.",
-    "iconClass": "bi-graph-up-arrow",
+    "id": "project-data-quality",
+    "title": "Data Quality & KPI Analytics",
+    "description": "Power BI solution for monitoring data quality metrics and key performance indicators to ensure reliable business intelligence.",
+    "iconClass": "bi-shield-check",
     "link": "#project-details",
     "category": "showcase"
   },
   {
-    "id": "project-supply-chain",
-    "title": "Supply Chain Optimization",
-    "description": "End-to-end supply chain visibility solution with inventory optimization models, logistics performance tracking, and supplier analytics.",
-    "iconClass": "bi-truck",
+    "id": "project-bi-migration",
+    "title": "Tableau to Power BI Migration",
+    "description": "End-to-end migration of reporting systems from Tableau to Power BI with optimized data models and enhanced visualization capabilities.",
+    "iconClass": "bi-arrow-repeat",
     "link": "#project-details",
     "category": "showcase"
   },
   {
-    "id": "project-hr-analytics",
-    "title": "HR Analytics Platform",
-    "description": "Workforce analytics solution providing insights into employee performance, retention risk factors, and talent acquisition effectiveness.",
-    "iconClass": "bi-person-workspace",
+    "id": "project-hr-recruitment",
+    "title": "HR Analytics Recruitment Analysis",
+    "description": "Power BI dashboard transforming flat file data into a star schema for comprehensive recruitment analytics and hiring effectiveness tracking.",
+    "iconClass": "bi-person-plus",
     "link": "#project-details",
     "category": "showcase"
   }
