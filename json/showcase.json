@@ -5,7 +5,12 @@
     "description": "Power BI dashboard tracking loan approval rates, disbursement timelines, and risk analysis for optimized lending operations.",
     "iconClass": "bi-cash-stack",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-loan-disbursement.md",
+      "implementation": "markdown/implementation/project-loan-disbursement.md",
+      "report": "markdown/report/project-loan-disbursement.md"
+    }
   },
   {
     "id": "project-revenue-ageing",
@@ -13,7 +18,12 @@
     "description": "Power BI solution analyzing revenue patterns and customer account aging to improve cash flow management and collection strategies.",
     "iconClass": "bi-calendar-date",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-revenue-ageing.md",
+      "implementation": "markdown/implementation/project-revenue-ageing.md",
+      "report": "markdown/report/project-revenue-ageing.md"
+    }
   },
   {
     "id": "project-restaurant-analytics",
@@ -21,7 +31,12 @@
     "description": "Comprehensive Power BI dashboard for restaurant performance tracking, including sales trends, menu item popularity, and operational efficiency metrics.",
     "iconClass": "bi-shop",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-restaurant-analytics.md",
+      "implementation": "markdown/implementation/project-restaurant-analytics.md",
+      "report": "markdown/report/project-restaurant-analytics.md"
+    }
   },
   {
     "id": "project-data-quality",
@@ -29,7 +44,12 @@
     "description": "Power BI solution for monitoring data quality metrics and key performance indicators to ensure reliable business intelligence.",
     "iconClass": "bi-shield-check",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-data-quality.md",
+      "implementation": "markdown/implementation/project-data-quality.md",
+      "report": "markdown/report/project-data-quality.md"
+    }
   },
   {
     "id": "project-bi-migration",
@@ -37,7 +57,12 @@
     "description": "End-to-end migration of reporting systems from Tableau to Power BI with optimized data models and enhanced visualization capabilities.",
     "iconClass": "bi-arrow-repeat",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-bi-migration.md",
+      "implementation": "markdown/implementation/project-bi-migration.md",
+      "report": "markdown/report/project-bi-migration.md"
+    }
   },
   {
     "id": "project-hr-recruitment",
@@ -45,6 +70,11 @@
     "description": "Power BI dashboard transforming flat file data into a star schema for comprehensive recruitment analytics and hiring effectiveness tracking.",
     "iconClass": "bi-person-plus",
     "link": "#project-details",
-    "category": "showcase"
+    "category": "showcase",
+    "contentPaths": {
+      "requirements": "markdown/requirements/project-hr-recruitment.md",
+      "implementation": "markdown/implementation/project-hr-recruitment.md",
+      "report": "markdown/report/project-hr-recruitment.md"
+    }
   }
 ]

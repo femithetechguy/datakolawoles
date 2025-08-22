@@ -1,0 +1,159 @@
+/* ShowcaseViewer Component Styles */
+
+/* Root Variables */
+:root {
+    --color-background: #FFFFFF;
+    --color-accent: #F85C70;
+    --color-text: #212529;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal-lg {
+    max-width: 800px;
+}
+
+.modal-header {
+    align-items: flex-start;
+}
+
+.modal-header .privacy-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.modal-header .privacy-notice .bi-shield-lock {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+.modal-title {
+    color: var(--color-accent);
+}
+
+/* Content Area */
+#showcase-content {
+    min-height: 300px;
+    transition: opacity 0.2s ease;
+}
+
+/* Tab Navigation */
+#showcase-tabs .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+#showcase-tabs .nav-link.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+#showcase-tabs .nav-link:hover {
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.content-area {
+    background: var(--color-background);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    min-height: 200px;
+    transition: opacity 0.2s ease;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    padding: 2rem 0;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Content Transitions */
+.content-text {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Error State */
+.alert-danger {
+    border: none;
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.alert-danger .btn-outline-danger {
+    border-color: rgba(220, 53, 69, 0.5);
+    color: #dc3545;
+}
+
+.alert-danger .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Test Cards */
+.test-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 1rem;
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Test Controls */
+.test-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--color-shadow);
+}
+
+/* Test Logger */
+.test-log {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--color-shadow);
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.test-log p {
+    margin: 0;
+    padding: 2px 0;
+}
+
+/* Test Log Status Colors */
+.test-log .success { color: #198754; }
+.test-log .error { color: #dc3545; }
+.test-log .info { color: #0d6efd; }
+
+/* General Page Layout */
+body {
+    padding: 2rem;
+}

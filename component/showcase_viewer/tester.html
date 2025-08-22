@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowcaseViewer Component Tester</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="showcase_viewer.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">ShowcaseViewer Tester</h1>
+        
+        <div class="row">
+            <!-- Test Cards -->
+            <div class="col-md-4">
+                <div class="card test-card" data-project-id="project-loan-disbursement">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-cash-stack"></i>
+                            Loan Disbursement Analysis
+                        </h5>
+                        <p class="card-text">Test card 1 - Click to open viewer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card test-card" data-project-id="project-restaurant-analytics">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-shop"></i>
+                            Restaurant Analytics
+                        </h5>
+                        <p class="card-text">Test card 2 - Click to open viewer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card test-card" data-project-id="project-data-quality">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-shield-check"></i>
+                            Data Quality Analytics
+                        </h5>
+                        <p class="card-text">Test card 3 - Click to open viewer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Controls -->
+    <div class="test-controls">
+        <button class="btn btn-primary" onclick="runAllTests()">Run All Tests</button>
+        <button class="btn btn-outline-secondary" onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <!-- Test Log -->
+    <div class="test-log" id="testLog"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Component Script -->
+    <script src="showcase_viewer.js"></script>
+
+    <!-- Test Script -->
+    <script>
+        // Test Logger
+        class TestLogger {
+            static log(message, type = 'info') {
+                const log = document.getElementById('testLog');
+                const entry = document.createElement('p');
+                entry.className = type;
+                entry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+                log.insertBefore(entry, log.firstChild);
+            }
+
+            static success(message) {
+                this.log(`✓ ${message}`, 'success');
+            }
+
+            static error(message) {
+                this.log(`✗ ${message}`, 'error');
+            }
+
+            static info(message) {
+                this.log(message, 'info');
+            }
+        }
+
+        // Test Cases
+        const tests = {
+            async testInitialization() {
+                TestLogger.info('Testing component initialization...');
+                if (window.showcaseViewer instanceof ShowcaseViewer) {
+                    TestLogger.success('ShowcaseViewer initialized correctly');
+                } else {
+                    TestLogger.error('ShowcaseViewer not initialized');
+                }
+            },
+
+            async testModalCreation() {
+                TestLogger.info('Testing modal creation...');
+                const modal = document.getElementById('showcase-viewer-modal');
+                if (modal) {
+                    TestLogger.success('Modal element created');
+                } else {
+                    TestLogger.error('Modal element not found');
+                }
+            },
+
+            async testTabStructure() {
+                TestLogger.info('Testing tab structure...');
+                const tabs = document.querySelectorAll('#showcase-tabs .nav-link');
+                if (tabs.length === 3) {
+                    TestLogger.success('All tabs present');
+                } else {
+                    TestLogger.error(`Expected 3 tabs, found ${tabs.length}`);
+                }
+            },
+
+            async testContentArea() {
+                TestLogger.info('Testing content area...');
+                const content = document.getElementById('showcase-content');
+                if (content) {
+                    TestLogger.success('Content area present');
+                } else {
+                    TestLogger.error('Content area not found');
+                }
+            }
+        };
+
+        // Test Runner
+        async function runAllTests() {
+            TestLogger.info('Starting test suite...');
+            for (const [name, test] of Object.entries(tests)) {
+                try {
+                    await test();
+                } catch (error) {
+                    TestLogger.error(`${name} failed: ${error.message}`);
+                }
+            }
+            TestLogger.info('Test suite completed');
+        }
+
+        function clearLog() {
+            document.getElementById('testLog').innerHTML = '';
+            TestLogger.info('Log cleared');
+        }
+
+        // Run initial tests when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            TestLogger.info('Page loaded, component ready for testing');
+            runAllTests();
+        });
+    </script>
+</body>
+</html>
