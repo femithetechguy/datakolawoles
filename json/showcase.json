@@ -13,12 +13,15 @@
     },
     "related_files_dir": "files/showcase/project-loan-disbursement",
     "powerBI": {
-      "embedUrl": "https://app.fabric.microsoft.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d&autoAuth=true&ctid=1cb39042-ff1e-4480-b1e9-682b8141328d",
+      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d",
       "reportId": "630bd69e-a003-457b-bba3-dd9a62d4707d",
       "accessToken": "LOAN_REPORT_ACCESS_TOKEN",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   },

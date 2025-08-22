@@ -8,12 +8,14 @@ class ShowcaseViewer {
 
     static FADE_DURATION = 200; // milliseconds
 
-    constructor() {
+    constructor(options = {}) {
         this.currentProjectId = null;
         this.activeTab = ShowcaseViewer.TABS.REQUIREMENTS;
         this.modal = null;
         this.contentArea = null;
         this.modalElement = null;
+        this.onReportTabActivate = options.onReportTabActivate || null;
+        this.onModalClose = options.onModalClose || null;
         this.initialize();
     }
 
@@ -79,6 +81,11 @@ class ShowcaseViewer {
             this.currentProjectId = null;
             this.activeTab = 'requirements';
             
+            // Call onModalClose callback if provided
+            if (this.onModalClose) {
+                this.onModalClose();
+            }
+            
             // Clean up modal backdrop and restore page state
             document.body.classList.remove('modal-open');
             const backdrop = document.querySelector('.modal-backdrop');
@@ -99,10 +106,19 @@ class ShowcaseViewer {
             }
         });
 
-        // Setup project card click listeners
+        // Setup project card and view details click listeners
         document.addEventListener('click', (e) => {
             const projectCard = e.target.closest('[data-project-id]');
-            if (projectCard) {
+            const viewDetailsBtn = e.target.closest('.view-details');
+            
+            if (viewDetailsBtn) {
+                e.preventDefault();
+                const projectId = viewDetailsBtn.dataset.projectId;
+                if (projectId) {
+                    this.showProject(projectId);
+                }
+            } else if (projectCard && !e.target.closest('.view-details')) {
+                e.preventDefault();
                 this.showProject(projectCard.dataset.projectId);
             }
         });
@@ -235,7 +251,24 @@ class ShowcaseViewer {
         // Store current tab
         this.activeTab = tabId;
 
-        // Show loading state with fade
+        // Handle Power BI report tab separately
+        if (tabId === ShowcaseViewer.TABS.REPORT) {
+            this.contentArea.style.opacity = '0';
+            setTimeout(() => {
+                this.contentArea.innerHTML = `
+                    <div class="report-container">
+                        <div id="powerbi-container"></div>
+                    </div>
+                `;
+                this.contentArea.style.opacity = '1';
+                
+                // Call the dedicated Power BI embedding function
+                this.embedPowerBIReport(project);
+            }, ShowcaseViewer.FADE_DURATION);
+            return;
+        }
+
+        // Show loading state with fade for other tabs
         this.contentArea.style.opacity = '0';
         setTimeout(() => {
             this.contentArea.innerHTML = this.showLoadingState();
@@ -294,6 +327,70 @@ class ShowcaseViewer {
                 this.contentArea.style.opacity = '1';
             }, 200);
         }
+    }
+
+    async embedPowerBIReport(project) {
+        try {
+            // Show loading state in the container
+            const container = document.getElementById('powerbi-container');
+            container.innerHTML = `
+                <div class="loading">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div>Loading report...</div>
+                </div>
+            `;
+
+            if (this.onReportTabActivate) {
+                try {
+                    const report = await this.onReportTabActivate(project);
+                    if (!report) {
+                        throw new Error('Failed to initialize report');
+                    }
+                    
+                    // Setup event handlers
+                    report.on('loaded', () => {
+                        console.log('Report loaded successfully');
+                    });
+
+                    report.on('rendered', () => {
+                        console.log('Report rendered successfully');
+                    });
+
+                    report.on('error', (event) => {
+                        this.showReportError(event.detail.message || 'Error loading report');
+                    });
+
+                } catch (error) {
+                    this.showReportError(error.message || 'Failed to initialize report');
+                }
+            } else {
+                this.showReportError('Report initialization not configured');
+            }
+        } catch (error) {
+            this.showReportError(error.message || 'Failed to load report');
+        }
+    }
+
+    showReportError(message) {
+        const container = document.getElementById('powerbi-container');
+        container.innerHTML = `
+            <div class="loading">
+                <div class="alert alert-danger mb-0">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <div>
+                            <h6 class="alert-heading mb-1">Error Loading Report</h6>
+                            <p class="mb-0">${message}</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-danger btn-sm mt-2" onclick="window.showcaseViewer.retryLoad()">
+                        <i class="bi bi-arrow-clockwise me-1"></i> Retry
+                    </button>
+                </div>
+            </div>
+        `;
     }
 }
 
