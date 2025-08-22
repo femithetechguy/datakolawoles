@@ -78,6 +78,15 @@ class ShowcaseViewer {
         this.modalElement.addEventListener('hidden.bs.modal', () => {
             this.currentProjectId = null;
             this.activeTab = 'requirements';
+            
+            // Clean up modal backdrop and restore page state
+            document.body.classList.remove('modal-open');
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            document.body.style.removeProperty('padding-right');
+            document.body.style.removeProperty('overflow');
         });
     }
 
@@ -104,6 +113,15 @@ class ShowcaseViewer {
             // Ensure modal is initialized
             if (!this.modal) {
                 this.createModal();
+            }
+            
+            // Force home button hide
+            document.body.classList.add('modal-open');
+            const homeBtn = document.querySelector('.floating-home-btn');
+            if (homeBtn) {
+                homeBtn.style.visibility = 'hidden';
+                homeBtn.style.opacity = '0';
+                homeBtn.style.pointerEvents = 'none';
             }
 
             // Get project data
