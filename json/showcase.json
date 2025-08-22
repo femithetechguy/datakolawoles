@@ -10,6 +10,18 @@
       "requirements": "markdown/requirements/project-loan-disbursement.md",
       "implementation": "markdown/implementation/project-loan-disbursement.md",
       "report": "markdown/report/project-loan-disbursement.md"
+    },
+    "related_files_dir": "files/showcase/project-loan-disbursement",
+    "powerBI": {
+      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d&autoAuth=true&embeddedDemo=true",
+      "reportId": "630bd69e-a003-457b-bba3-dd9a62d4707d",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   },
   {
@@ -23,6 +35,18 @@
       "requirements": "markdown/requirements/project-revenue-ageing.md",
       "implementation": "markdown/implementation/project-revenue-ageing.md",
       "report": "markdown/report/project-revenue-ageing.md"
+    },
+    "related_files_dir": "files/showcase/project-revenue-ageing",
+    "powerBI": {
+      "embedUrl": "",
+      "reportId": "",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   },
   {
@@ -36,6 +60,18 @@
       "requirements": "markdown/requirements/project-restaurant-analytics.md",
       "implementation": "markdown/implementation/project-restaurant-analytics.md",
       "report": "markdown/report/project-restaurant-analytics.md"
+    },
+    "related_files_dir": "files/showcase/project-restaurant-analytics",
+    "powerBI": {
+      "embedUrl": "",
+      "reportId": "",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   },
   {
@@ -49,6 +85,18 @@
       "requirements": "markdown/requirements/project-data-quality.md",
       "implementation": "markdown/implementation/project-data-quality.md",
       "report": "markdown/report/project-data-quality.md"
+    },
+    "related_files_dir": "files/showcase/project-data-quality",
+    "powerBI": {
+      "embedUrl": "",
+      "reportId": "",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   },
   {
@@ -62,6 +110,18 @@
       "requirements": "markdown/requirements/project-bi-migration.md",
       "implementation": "markdown/implementation/project-bi-migration.md",
       "report": "markdown/report/project-bi-migration.md"
+    },
+    "related_files_dir": "files/showcase/project-bi-migration",
+    "powerBI": {
+      "embedUrl": "",
+      "reportId": "",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   },
   {
@@ -75,6 +135,18 @@
       "requirements": "markdown/requirements/project-hr-recruitment.md",
       "implementation": "markdown/implementation/project-hr-recruitment.md",
       "report": "markdown/report/project-hr-recruitment.md"
+    },
+    "related_files_dir": "files/showcase/project-hr-recruitment",
+    "powerBI": {
+      "embedUrl": "",
+      "reportId": "",
+      "settings": {
+        "navContentPaneEnabled": true,
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
+      }
     }
   }
 ]
