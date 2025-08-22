@@ -13,9 +13,8 @@
     },
     "related_files_dir": "files/showcase/project-loan-disbursement",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d",
+      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d&autoAuth=true&embeddedDemo=true",
       "reportId": "630bd69e-a003-457b-bba3-dd9a62d4707d",
-      "accessToken": "LOAN_REPORT_ACCESS_TOKEN",
       "settings": {
         "navContentPaneEnabled": true,
         "filterPaneEnabled": true,
@@ -39,12 +38,14 @@
     },
     "related_files_dir": "files/showcase/project-revenue-ageing",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=REVENUE_REPORT_ID",
-      "reportId": "REVENUE_REPORT_ID",
-      "accessToken": "REVENUE_REPORT_ACCESS_TOKEN",
+      "embedUrl": "",
+      "reportId": "",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   },
@@ -62,12 +63,14 @@
     },
     "related_files_dir": "files/showcase/project-restaurant-analytics",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=RESTAURANT_REPORT_ID",
-      "reportId": "RESTAURANT_REPORT_ID",
-      "accessToken": "RESTAURANT_REPORT_ACCESS_TOKEN",
+      "embedUrl": "",
+      "reportId": "",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   },
@@ -85,12 +88,14 @@
     },
     "related_files_dir": "files/showcase/project-data-quality",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=DATA_QUALITY_REPORT_ID",
-      "reportId": "DATA_QUALITY_REPORT_ID",
-      "accessToken": "DATA_QUALITY_REPORT_ACCESS_TOKEN",
+      "embedUrl": "",
+      "reportId": "",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   },
@@ -108,12 +113,14 @@
     },
     "related_files_dir": "files/showcase/project-bi-migration",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=MIGRATION_REPORT_ID",
-      "reportId": "MIGRATION_REPORT_ID",
-      "accessToken": "MIGRATION_REPORT_ACCESS_TOKEN",
+      "embedUrl": "",
+      "reportId": "",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   },
@@ -131,12 +138,14 @@
     },
     "related_files_dir": "files/showcase/project-hr-recruitment",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=HR_RECRUITMENT_REPORT_ID",
-      "reportId": "HR_RECRUITMENT_REPORT_ID",
-      "accessToken": "HR_RECRUITMENT_REPORT_ACCESS_TOKEN",
+      "embedUrl": "",
+      "reportId": "",
       "settings": {
         "navContentPaneEnabled": true,
-        "filterPaneEnabled": true
+        "filterPaneEnabled": true,
+        "background": "transparent",
+        "layoutType": "master",
+        "zoomLevel": 1.0
       }
     }
   }
