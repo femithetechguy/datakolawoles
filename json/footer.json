@@ -5,16 +5,9 @@
       "platform": "LinkedIn",
       "url": "https://www.linkedin.com/in/femithetechguy/",
       "icon": "bi-linkedin"
-    },
-    {
-      "platform": "GitHub",
-      "url": "https://github.com/femithetechguy",
-      "icon": "bi-github"
     }
   ],
-  "quickLinks": [
- 
-  ],
+  "quickLinks": [],
   "contact": {
     "email": "adefemi@kolawoles.com"
   }
