@@ -16,6 +16,7 @@ class ShowcaseViewer {
         this.modalElement = null;
         this.reportConfig = options.reportConfig || null; // PowerBI report configuration
         this.onModalClose = options.onModalClose || null;
+        this.currentReportIndex = 0; // Track current report index
         this.initialize();
     }
 
@@ -338,44 +339,147 @@ class ShowcaseViewer {
                     <div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <div>Loading report...</div>
+                    <div>Loading reports...</div>
                 </div>
             `;
 
-            if (!project.powerBI || !project.powerBI.embedUrl) {
-                throw new Error('No PowerBI configuration found for this project');
+            if (!project.powerBI || !project.powerBI.reports || !project.powerBI.reports.length) {
+                throw new Error('No PowerBI reports found for this project');
             }
 
-            // Create iframe for playground embed
-            const iframe = document.createElement('iframe');
-            iframe.className = 'powerbi-report-frame';
-            iframe.title = 'Power BI Report';
-            iframe.allowFullscreen = true;
-
-            // Construct embed URL with settings
-            const settings = project.powerBI.settings || {};
-            const queryParams = new URLSearchParams({
-                navContentPaneEnabled: settings.navContentPaneEnabled ?? true,
-                filterPaneEnabled: settings.filterPaneEnabled ?? true,
-                background: settings.background ?? 'transparent',
-                layoutType: settings.layoutType ?? 'master',
-                zoomLevel: settings.zoomLevel ?? 1.0
-            });
-
-            iframe.src = `${project.powerBI.embedUrl}&${queryParams.toString()}`;
-
-            // Clear container and add iframe
+            // Clear container
             container.innerHTML = '';
-            container.appendChild(iframe);
 
-            // Set up event listener for iframe load
-            iframe.addEventListener('load', () => {
-                console.log('Report loaded successfully');
+            // Create wrapper for reports
+            const reportsWrapper = document.createElement('div');
+            reportsWrapper.className = 'reports-wrapper';
+
+            const reports = project.powerBI.reports.filter(report => report.embedUrl);
+            if (reports.length === 0) {
+                throw new Error('No reports available for embedding');
+            }
+
+            // Create report navigation if there are multiple reports
+            if (reports.length > 1) {
+                const navContainer = document.createElement('div');
+                navContainer.className = 'report-nav';
+                
+                // Add report selector
+                const reportSelector = document.createElement('div');
+                reportSelector.className = 'report-selector';
+                reportSelector.innerHTML = `
+                    <span class="report-counter">
+                        Report <span class="current-report">1</span> of ${reports.length}
+                    </span>
+                    <div class="report-title"></div>
+                `;
+                navContainer.appendChild(reportSelector);
+
+                // Add navigation buttons
+                const navButtons = document.createElement('div');
+                navButtons.className = 'report-nav-buttons';
+                navButtons.innerHTML = `
+                    <button class="btn btn-outline-primary btn-sm prev-report" disabled>
+                        <i class="bi bi-chevron-left"></i> Previous
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm next-report">
+                        Next <i class="bi bi-chevron-right"></i>
+                    </button>
+                `;
+                navContainer.appendChild(navButtons);
+
+                container.appendChild(navContainer);
+            }
+
+            // Add reports container
+            container.appendChild(reportsWrapper);
+
+            // Create and add each report
+            reports.forEach((report, index) => {
+                const reportSection = document.createElement('div');
+                reportSection.className = 'report-section';
+                reportSection.style.display = index === this.currentReportIndex ? 'block' : 'none';
+
+                // Create iframe for playground embed
+                const iframe = document.createElement('iframe');
+                iframe.className = 'powerbi-report-frame';
+                iframe.title = report.title;
+                iframe.allowFullscreen = true;
+
+                // Construct embed URL with settings
+                const settings = report.settings || {};
+                const queryParams = new URLSearchParams();
+                
+                // Ensure proper boolean values for navigation settings
+                queryParams.append('navContentPaneEnabled', settings.navContentPaneEnabled !== false);
+                queryParams.append('filterPaneEnabled', settings.filterPaneEnabled !== false);
+                
+                // Add other settings
+                queryParams.append('background', settings.background ?? 'transparent');
+                queryParams.append('layoutType', settings.layoutType ?? 'master');
+                queryParams.append('zoomLevel', settings.zoomLevel ?? 1.0);
+
+                // Construct the final URL, ensuring we don't add an extra &
+                const baseUrl = report.embedUrl.includes('?') ? report.embedUrl : `${report.embedUrl}?`;
+                iframe.src = baseUrl + (baseUrl.endsWith('?') ? '' : '&') + queryParams.toString();
+                reportSection.appendChild(iframe);
+                reportsWrapper.appendChild(reportSection);
+
+                // Set up event listener for iframe load
+                iframe.addEventListener('load', () => {
+                    console.log(`Report "${report.title}" loaded successfully`);
+                });
             });
+
+            // Set up navigation handlers if there are multiple reports
+            if (reports.length > 1) {
+                this.setupReportNavigation(container, reports);
+            }
+
+            // Update initial report title if there are multiple reports
+            if (reports.length > 1) {
+                const titleElement = container.querySelector('.report-title');
+                if (titleElement) {
+                    titleElement.textContent = reports[this.currentReportIndex].title;
+                }
+            }
 
         } catch (error) {
-            this.showReportError(error.message || 'Failed to load report');
+            this.showReportError(error.message || 'Failed to load reports');
         }
+    }
+
+    setupReportNavigation(container, reports) {
+        const prevButton = container.querySelector('.prev-report');
+        const nextButton = container.querySelector('.next-report');
+        const reportSections = container.querySelectorAll('.report-section');
+        const currentReportSpan = container.querySelector('.current-report');
+        const titleElement = container.querySelector('.report-title');
+
+        const updateNavigation = () => {
+            prevButton.disabled = this.currentReportIndex === 0;
+            nextButton.disabled = this.currentReportIndex === reports.length - 1;
+            currentReportSpan.textContent = this.currentReportIndex + 1;
+            titleElement.textContent = reports[this.currentReportIndex].title;
+
+            reportSections.forEach((section, index) => {
+                section.style.display = index === this.currentReportIndex ? 'block' : 'none';
+            });
+        };
+
+        prevButton.addEventListener('click', () => {
+            if (this.currentReportIndex > 0) {
+                this.currentReportIndex--;
+                updateNavigation();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (this.currentReportIndex < reports.length - 1) {
+                this.currentReportIndex++;
+                updateNavigation();
+            }
+        });
     }
 
     showReportError(message) {

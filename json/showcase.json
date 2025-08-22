@@ -13,15 +13,21 @@
     },
     "related_files_dir": "files/showcase/project-loan-disbursement",
     "powerBI": {
-      "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d&autoAuth=true&embeddedDemo=true",
-      "reportId": "630bd69e-a003-457b-bba3-dd9a62d4707d",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "Main Dashboard",
+          "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=630bd69e-a003-457b-bba3-dd9a62d4707d&autoAuth=true&embeddedDemo=true",
+          "reportId": "630bd69e-a003-457b-bba3-dd9a62d4707d",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   },
   {
@@ -38,15 +44,21 @@
     },
     "related_files_dir": "files/showcase/project-revenue-ageing",
     "powerBI": {
-      "embedUrl": "",
-      "reportId": "",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "Revenue Overview",
+          "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=bdaec8b7-0c2d-423d-b606-9d46e01ed524&autoAuth=true&embeddedDemo=true",
+          "reportId": "bdaec8b7-0c2d-423d-b606-9d46e01ed524",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   },
   {
@@ -63,15 +75,21 @@
     },
     "related_files_dir": "files/showcase/project-restaurant-analytics",
     "powerBI": {
-      "embedUrl": "",
-      "reportId": "",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "Restaurant Analytics",
+          "embedUrl": "",
+          "reportId": "",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   },
   {
@@ -88,15 +106,33 @@
     },
     "related_files_dir": "files/showcase/project-data-quality",
     "powerBI": {
-      "embedUrl": "",
-      "reportId": "",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "Data Quality Dashboard",
+          "embedUrl": "",
+          "reportId": "",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        },
+        {
+          "title": "KPI Monitoring",
+          "embedUrl": "",
+          "reportId": "",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   },
   {
@@ -113,15 +149,21 @@
     },
     "related_files_dir": "files/showcase/project-bi-migration",
     "powerBI": {
-      "embedUrl": "",
-      "reportId": "",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "Migration Overview",
+          "embedUrl": "",
+          "reportId": "",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   },
   {
@@ -138,15 +180,33 @@
     },
     "related_files_dir": "files/showcase/project-hr-recruitment",
     "powerBI": {
-      "embedUrl": "",
-      "reportId": "",
-      "settings": {
-        "navContentPaneEnabled": true,
-        "filterPaneEnabled": true,
-        "background": "transparent",
-        "layoutType": "master",
-        "zoomLevel": 1.0
-      }
+      "reports": [
+        {
+          "title": "HR Analytics Flat File",
+          "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=77032bb9-c01a-40b2-90fb-1deb6afb720d&autoAuth=true&embeddedDemo=true",
+          "reportId": "77032bb9-c01a-40b2-90fb-1deb6afb720d",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        },
+        {
+          "title": "HR Analytics Star Schema",
+          "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=30f54b27-de05-403b-8041-3171d1ee1617&autoAuth=true&embeddedDemo=true",
+          "reportId": "30f54b27-de05-403b-8041-3171d1ee1617",
+          "settings": {
+            "navContentPaneEnabled": true,
+            "filterPaneEnabled": true,
+            "background": "transparent",
+            "layoutType": "master",
+            "zoomLevel": 1.0
+          }
+        }
+      ],
+      "defaultReport": 0
     }
   }
 ]
