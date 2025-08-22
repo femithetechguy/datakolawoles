@@ -264,6 +264,21 @@ header {
   height: 100%;
 }
 
+/* Privacy Notice styles */
+.privacy-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0;
+}
+
+.privacy-notice .bi-shield-lock {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  opacity: 0.8;
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px var(--color-shadow);
@@ -483,7 +498,7 @@ footer {
   position: fixed;
   bottom: 32px;
   right: 32px;
-  z-index: 9999;
+  z-index: 999;
   background: #F85C70;
   color: #fff;
   border: none;

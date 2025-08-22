@@ -39,15 +39,19 @@ function createShowcaseSection(data) {
     html += `
       <div class="col-md-6 col-lg-3 mb-2">
         <div class="showcase-item animate-fade-in" style="animation-delay: ${(index + 1) * 100}ms;">
-          <div class="card shadow h-100">
+          <div class="card shadow h-100" data-project-id="${project.id}">
             <div class="card-img-top text-center px-3 py-2 bg-light" id="project-image-${index}">
               <i class="bi ${getProjectIcon(project.title)} text-primary" style="font-size: 3.75rem;"></i>
             </div>
             <div class="card-body">
               <h5 class="card-title mb-1">${project.title}</h5>
+              <div class="privacy-notice mb-2">
+                <i class="bi bi-shield-lock text-muted"></i>
+                <small class="text-muted fst-italic">Note: For privacy and data security, certain project details have been redacted/ommitted.</small>
+              </div>
               <p class="card-text mb-2">${project.description}</p>
               <div class="d-flex flex-wrap gap-2">
-                ${project.link ? `<a href="${project.link}" class="btn btn-primary btn-sm">View Details</a>` : ''}
+                <button class="btn btn-primary btn-sm view-details" data-project-id="${project.id}">View Details</button>
               </div>
             </div>
           </div>
@@ -67,6 +71,31 @@ function createShowcaseSection(data) {
 }
 
 
+// Initialize showcase viewer
+let showcaseViewer;
+
+// Handle showcase initialization
+function initializeShowcase() {
+  // Initialize the showcase viewer
+  showcaseViewer = new ShowcaseViewer();
+
+  // Add click event listeners to all view details buttons
+  document.addEventListener('click', function(e) {
+    const viewDetailsBtn = e.target.closest('.view-details');
+    if (viewDetailsBtn) {
+      e.preventDefault();
+      const projectId = viewDetailsBtn.dataset.projectId;
+      if (projectId) {
+        showcaseViewer.showProject(projectId);
+      }
+    }
+  });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeShowcase);
+
 // Make functions available globally
 window.createShowcaseSection = createShowcaseSection;
 window.getProjectIcon = getProjectIcon;
+window.initializeShowcase = initializeShowcase;
