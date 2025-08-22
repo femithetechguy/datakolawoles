@@ -14,7 +14,7 @@ class ShowcaseViewer {
         this.modal = null;
         this.contentArea = null;
         this.modalElement = null;
-        this.onReportTabActivate = options.onReportTabActivate || null;
+        this.reportConfig = options.reportConfig || null; // PowerBI report configuration
         this.onModalClose = options.onModalClose || null;
         this.initialize();
     }
@@ -342,32 +342,37 @@ class ShowcaseViewer {
                 </div>
             `;
 
-            if (this.onReportTabActivate) {
-                try {
-                    const report = await this.onReportTabActivate(project);
-                    if (!report) {
-                        throw new Error('Failed to initialize report');
-                    }
-                    
-                    // Setup event handlers
-                    report.on('loaded', () => {
-                        console.log('Report loaded successfully');
-                    });
-
-                    report.on('rendered', () => {
-                        console.log('Report rendered successfully');
-                    });
-
-                    report.on('error', (event) => {
-                        this.showReportError(event.detail.message || 'Error loading report');
-                    });
-
-                } catch (error) {
-                    this.showReportError(error.message || 'Failed to initialize report');
-                }
-            } else {
-                this.showReportError('Report initialization not configured');
+            if (!project.powerBI || !project.powerBI.embedUrl) {
+                throw new Error('No PowerBI configuration found for this project');
             }
+
+            // Create iframe for playground embed
+            const iframe = document.createElement('iframe');
+            iframe.className = 'powerbi-report-frame';
+            iframe.title = 'Power BI Report';
+            iframe.allowFullscreen = true;
+
+            // Construct embed URL with settings
+            const settings = project.powerBI.settings || {};
+            const queryParams = new URLSearchParams({
+                navContentPaneEnabled: settings.navContentPaneEnabled ?? true,
+                filterPaneEnabled: settings.filterPaneEnabled ?? true,
+                background: settings.background ?? 'transparent',
+                layoutType: settings.layoutType ?? 'master',
+                zoomLevel: settings.zoomLevel ?? 1.0
+            });
+
+            iframe.src = `${project.powerBI.embedUrl}&${queryParams.toString()}`;
+
+            // Clear container and add iframe
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            // Set up event listener for iframe load
+            iframe.addEventListener('load', () => {
+                console.log('Report loaded successfully');
+            });
+
         } catch (error) {
             this.showReportError(error.message || 'Failed to load report');
         }
