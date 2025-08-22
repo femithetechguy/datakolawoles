@@ -10,7 +10,13 @@
 
 /* Modal Styles */
 .modal-lg {
-    max-width: 800px;
+    max-width: 1024px; /* Increased for better 16:9 report display */
+}
+
+@media (min-width: 1200px) {
+    .modal-lg {
+        max-width: 1200px; /* Even wider on larger screens */
+    }
 }
 
 .modal-header {
