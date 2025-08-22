@@ -102,25 +102,25 @@
 /* PowerBI Report Container */
 .report-container {
     width: 100%;
-    height: 600px;
     position: relative;
     background: var(--color-background);
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px var(--color-shadow);
-    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .powerbi-report-frame {
     width: 100%;
-    height: 100%;
+    height: 700px; /* Increased height to accommodate tabs */
     border: none;
     display: block;
+    border-radius: 0.5rem;
 }
 
 #powerbi-container {
     width: 100%;
-    height: 100%;
     position: relative;
+    padding: 1rem;
 }
 
 #powerbi-container .loading {
@@ -135,6 +135,64 @@
     width: 3rem;
     height: 3rem;
     margin-bottom: 1rem;
+}
+
+.report-section {
+    margin: 1rem 0;
+}
+
+.reports-wrapper {
+    position: relative;
+    min-height: 700px;
+}
+
+.report-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 0.5rem;
+}
+
+.report-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.report-counter {
+    font-size: 0.875rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.report-title {
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.report-nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.report-nav-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.report-nav-buttons .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.report-nav-buttons .btn i {
+    font-size: 0.875rem;
 }
 
 .content-area p {
