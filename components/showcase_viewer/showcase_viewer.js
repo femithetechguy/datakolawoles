@@ -343,8 +343,15 @@ class ShowcaseViewer {
                 </div>
             `;
 
-            if (!project.powerBI || !project.powerBI.reports || !project.powerBI.reports.length) {
-                throw new Error('No PowerBI reports found for this project');
+            // Validate PowerBI configuration
+            if (!project.powerBI) {
+                this.showReportError('PowerBI configuration is missing for this project.', 'config');
+                return;
+            }
+
+            if (!project.powerBI.reports || !project.powerBI.reports.length) {
+                this.showReportError('No reports are configured for this project.', 'config');
+                return;
             }
 
             // Clear container
@@ -354,10 +361,11 @@ class ShowcaseViewer {
             const reportsWrapper = document.createElement('div');
             reportsWrapper.className = 'reports-wrapper';
 
-            const reports = project.powerBI.reports.filter(report => report.embedUrl);
-            if (reports.length === 0) {
-                throw new Error('No reports available for embedding');
-            }
+            const reports = project.powerBI.reports;
+            
+            // Check if we have any properly configured reports
+            const configuredReports = reports.filter(report => report.embedUrl && report.reportId);
+            const hasAnyConfigured = configuredReports.length > 0;
 
             // Create report navigation if there are multiple reports
             if (reports.length > 1) {
@@ -399,6 +407,35 @@ class ShowcaseViewer {
                 const reportSection = document.createElement('div');
                 reportSection.className = 'report-section';
                 reportSection.style.display = index === this.currentReportIndex ? 'block' : 'none';
+
+                // Check if this report is properly configured
+                if (!report.embedUrl || !report.reportId) {
+                    // Create config error message for this report
+                    const missingFields = [];
+                    if (!report.embedUrl) missingFields.push('embed URL');
+                    if (!report.reportId) missingFields.push('report ID');
+                    
+                    const errorContent = document.createElement('div');
+                    errorContent.className = 'report-error config-error';
+                    errorContent.innerHTML = `
+                        <div class="alert alert-warning mb-0">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-gear-fill me-2"></i>
+                                <div>
+                                    <h6 class="alert-heading mb-1">${report.title}</h6>
+                                    <p class="mb-0">This report is not yet configured (missing ${missingFields.join(' and ')}).</p>
+                                    <small class="text-muted mt-2 d-block">
+                                        <i class="bi bi-info-circle"></i> 
+                                        Configuration in progress. The report will be available soon.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    reportSection.appendChild(errorContent);
+                    reportsWrapper.appendChild(reportSection);
+                    return;
+                }
 
                 // Create iframe for playground embed
                 const iframe = document.createElement('iframe');
@@ -482,21 +519,33 @@ class ShowcaseViewer {
         });
     }
 
-    showReportError(message) {
+    showReportError(message, type = 'error') {
         const container = document.getElementById('powerbi-container');
+        const isConfigError = type === 'config';
+
         container.innerHTML = `
-            <div class="loading">
-                <div class="alert alert-danger mb-0">
+            <div class="report-error ${isConfigError ? 'config-error' : ''}">
+                <div class="alert ${isConfigError ? 'alert-warning' : 'alert-danger'} mb-0">
                     <div class="d-flex align-items-center">
-                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <i class="bi ${isConfigError ? 'bi-gear-fill' : 'bi-exclamation-triangle-fill'} me-2"></i>
                         <div>
-                            <h6 class="alert-heading mb-1">Error Loading Report</h6>
+                            <h6 class="alert-heading mb-1">
+                                ${isConfigError ? 'Report Not Configured' : 'Error Loading Report'}
+                            </h6>
                             <p class="mb-0">${message}</p>
+                            ${isConfigError ? `
+                                <small class="text-muted mt-2 d-block">
+                                    <i class="bi bi-info-circle"></i> 
+                                    This report is currently being configured and will be available soon.
+                                </small>
+                            ` : ''}
                         </div>
                     </div>
-                    <button class="btn btn-outline-danger btn-sm mt-2" onclick="window.showcaseViewer.retryLoad()">
-                        <i class="bi bi-arrow-clockwise me-1"></i> Retry
-                    </button>
+                    ${!isConfigError ? `
+                        <button class="btn btn-outline-danger btn-sm mt-2" onclick="window.showcaseViewer.retryLoad()">
+                            <i class="bi bi-arrow-clockwise me-1"></i> Retry
+                        </button>
+                    ` : ''}
                 </div>
             </div>
         `;
